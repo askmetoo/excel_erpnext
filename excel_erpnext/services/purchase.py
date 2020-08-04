@@ -1,23 +1,22 @@
 import frappe
 import json
+import base64
 
 from frappe import _
 
 @frappe.whitelist()
-def receipt(uuid, *args, **kwargs):
+def receipt(uuid, filedata, *args, **kwargs):
 
-	json_file = frappe.request.files.get('json_file')
+	json_file = base64.decodestring(filedata.encode('utf-8'))
 
 	if not json_file:
 		frappe.local.response['http_status_code'] = 400
 		return _("Please upload file")
 
 	if json_file:
-		if json_file.filename == '':
-			return _('No file selected')
-
 		try:
-			json_doc = json.loads(json_file.read().decode('utf-8'))
+			json_doc = json.loads(json_file)
+			print(json_doc)
 			frappe.enqueue(
 				get_method(),
 				json_doc=json_doc,

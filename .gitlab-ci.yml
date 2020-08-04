@@ -28,7 +28,7 @@ build_excel_erpnext_worker:
   script:
     - export VERSION=$(git tag --list --sort=-version:refname | sed -n 1p | sed -e 's#.*@\(\)#\1#')
     - docker build -t excel-erpnext-worker docker/excel-erpnext-worker
-    - docker tag excel-erpnext-worker "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-worker:$VERSION
+    - docker tag excel-erpnext-worker "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-worker:$VERSION"
     - docker push "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-worker:$VERSION"
     - docker tag excel-erpnext-worker "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-worker:latest"
     - docker push "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-worker:latest"

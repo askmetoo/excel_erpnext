@@ -17,7 +17,7 @@ build_excel_erpnext_nginx:
     - docker build -t excel-erpnext-nginx docker/excel-erpnext-nginx
     - docker tag excel-erpnext-nginx "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-nginx:$VERSION"
     - docker tag excel-erpnext-nginx "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-nginx:latest"
-    - docker push "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-worker:$VERSION"
+    - docker push "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-nginx:$VERSION"
     - docker push "$CI_REGISTRY/$CI_PROJECT_NAMESPACE/excel_erpnext/excel-erpnext-nginx:latest"
 
 build_excel_erpnext_worker:

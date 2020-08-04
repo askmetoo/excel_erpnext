@@ -1,0 +1,59 @@
+{
+ "creation": "2020-08-04 15:50:11.065488",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "uuid",
+  "method",
+  "error_log",
+  "success_log"
+ ],
+ "fields": [
+  {
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "label": "UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error_log",
+   "fieldtype": "Code",
+   "label": "Error Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "success_log",
+   "fieldtype": "Code",
+   "label": "Success Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "method",
+   "fieldtype": "Data",
+   "label": "Method",
+   "read_only": 1
+  }
+ ],
+ "modified": "2020-08-04 16:17:11.153120",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Background Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -4,3 +4,4 @@
 *.swp
 tags
 excel_erpnext/docs/current
+.env

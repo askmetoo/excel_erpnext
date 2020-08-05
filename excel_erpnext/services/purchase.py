@@ -55,6 +55,15 @@ def enqueue_receipt(json_doc, user, uuid):
 		frappe.db.commit()
 
 	except Exception as exc:
+		# Delete draft doc
+		if (
+			doc
+			and doc.docstatus == 0
+			and not doc.get('__islocal')
+		):
+			doc.delete()
+			frappe.db.commit()
+
 		# Save error to custom doctype
 		background_log.error_log = repr(exc)
 		background_log.save()

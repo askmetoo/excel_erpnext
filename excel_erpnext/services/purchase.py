@@ -17,7 +17,7 @@ def receipt(uuid, filedata, *args, **kwargs):
 		try:
 			frappe.enqueue(
 				get_method(),
-				json_doc=json_file,
+				json_string=json_file,
 				user=frappe.session.user,
 				uuid=uuid,
 			)

@@ -90,6 +90,10 @@ app_license = "AGPLv3"
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+    "all": ["excel_erpnext.excel_erpnext.schedules.purchase_receipt.process_pr"]
+}
+
 # scheduler_events = {
 # 	"all": [
 # 		"excel_erpnext.tasks.all"

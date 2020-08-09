@@ -7,7 +7,11 @@
   "uuid",
   "method",
   "error_log",
-  "success_log"
+  "success_log",
+  "body",
+  "type",
+  "status",
+  "user"
  ],
  "fields": [
   {
@@ -33,9 +37,32 @@
    "fieldtype": "Data",
    "label": "Method",
    "read_only": 1
+  },
+  {
+   "fieldname": "body",
+   "fieldtype": "Code",
+   "label": "Body",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Queued\nIn progress\nComplete\nFail"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
   }
  ],
- "modified": "2020-08-04 16:17:11.153120",
+ "modified": "2020-08-08 23:59:53.870507",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Background Log",

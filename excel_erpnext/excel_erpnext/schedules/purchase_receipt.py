@@ -1,9 +1,6 @@
+import frappe
+
 def process_pr():
-	print('Queuing Now ' * 100)
-	d = frappe.new_doc("Excel Background Log")
-	d.status = 'Fail'
-	d.save()
-	frappe.db.commit()
 	statuses = frappe.get_list(
 		"Excel Background Log",
 		fields=["status"],
@@ -14,14 +11,14 @@ def process_pr():
 		return
 
 	background_logs = frappe.get_list(
-		"Excel Background Job",
+		"Excel Background Log",
 		filters={"status":"Queued"},
 		order_by='creation asc'
 	)
 
 	if len(background_logs) > 0:
 		background_log = frappe.get_doc(
-			"Excel Background Job",
+			"Excel Background Log",
 			background_logs[0].get('name')
 		)
 

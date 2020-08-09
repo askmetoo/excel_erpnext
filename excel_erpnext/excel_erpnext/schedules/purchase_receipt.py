@@ -1,4 +1,5 @@
 import frappe
+import json
 
 def process_pr():
 	statuses = frappe.get_list(

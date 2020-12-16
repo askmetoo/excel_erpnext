@@ -5,7 +5,7 @@ def process_purchase_orders():
     purchase_orders = frappe.get_all(
         "Purchase Order",
         filters = [
-            ["status", "!=", "Complete"],
+            ["per_received", "<", 100],
         ],
     )
 
@@ -19,8 +19,7 @@ def process_purchase_orders():
                         FROM `tabPurchase Receipt Item`
                         GROUP BY purchase_order
                     ) pr ON po.name = pr.purchase_order
-                    SET po.per_received = pr.total * 100 / po.total_qty,
-                        po.status = "Complete"
+                    SET po.per_received = pr.total * 100 / po.total_qty
                     WHERE po.name = "%s";
                 ''',
                 po.get('name'),

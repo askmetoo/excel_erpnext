@@ -91,7 +91,7 @@ app_license = "AGPLv3"
 # ---------------
 
 scheduler_events = {
-    "all": ["excel_erpnext.excel_erpnext.schedules.purchase_receipt.process_pr"]
+    "hourly_long": ["excel_erpnext.schedules.purchase.process_purchase_orders"]
 }
 
 # scheduler_events = {

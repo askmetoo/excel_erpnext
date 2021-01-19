@@ -1,10 +1,10 @@
-FROM bitnami/node:12-prod
+FROM node:12-buster-slim
 
 COPY install_app.sh /install_app
 
 RUN /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-12
 
-FROM frappe/erpnext-nginx:v12.10.1
+FROM frappe/erpnext-nginx:v12.16.2
 
 COPY --from=0 /home/frappe/frappe-bench/sites/ /var/www/html/
 COPY --from=0 /rsync /rsync

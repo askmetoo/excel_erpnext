@@ -2,7 +2,8 @@ FROM node:12-buster-slim
 
 COPY install_app.sh /install_app
 
-RUN /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-12
+RUN apt-get update && apt-get install git -y && \
+  /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-12
 
 FROM frappe/erpnext-nginx:v12.16.2
 

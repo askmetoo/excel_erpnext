@@ -1,0 +1,42 @@
+{
+ "creation": "2021-01-22 08:28:39.946550",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "no_field"
+ ],
+ "fields": [
+  {
+   "fieldname": "no_field",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "No Field",
+   "read_only": 1
+  }
+ ],
+ "issingle": 1,
+ "modified": "2021-01-22 08:30:26.089498",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Script Runner",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

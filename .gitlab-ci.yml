@@ -10,8 +10,7 @@ before_script:
 build_excel_erpnext_nginx:
   stage: build
   only:
-    refs:
-      - version-12
+    - tags
   script:
     - export VERSION=$(git tag --list --sort=-version:refname | sed -n 1p | sed -e 's#.*@\(\)#\1#')
     - docker build -t excel-erpnext-nginx docker/excel-erpnext-nginx
@@ -23,8 +22,7 @@ build_excel_erpnext_nginx:
 build_excel_erpnext_worker:
   stage: build
   only:
-    refs:
-      - version-12
+    - tags
   script:
     - export VERSION=$(git tag --list --sort=-version:refname | sed -n 1p | sed -e 's#.*@\(\)#\1#')
     - docker build -t excel-erpnext-worker docker/excel-erpnext-worker

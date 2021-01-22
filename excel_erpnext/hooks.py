@@ -131,3 +131,15 @@ scheduler_events = {
 # 	"Task": "excel_erpnext.task.get_dashboard_data"
 # }
 
+fixtures = [
+	{
+        "dt": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                ["Delivery Note Item-excel_serials"],
+            ],
+        ]
+    },
+]

@@ -138,7 +138,12 @@ fixtures = [
             [
                 "name",
                 "in",
-                ["Delivery Note Item-excel_serials"],
+                [
+                    "Delivery Note Item-excel_serials",
+                    "Stock Entry Detail-excel_serials",
+                    "Payment Entry-excel_tax_payment",
+                    "Payment Entry-excel_territory",
+                ],
             ],
         ]
     },

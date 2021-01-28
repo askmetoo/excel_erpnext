@@ -1,0 +1,56 @@
+{
+ "autoname": "field:lc_no",
+ "creation": "2021-01-25 13:49:37.871282",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lc_no",
+  "lc_date",
+  "lc_beneficiary"
+ ],
+ "fields": [
+  {
+   "fieldname": "lc_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "LC No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "LC Date"
+  },
+  {
+   "fieldname": "lc_beneficiary",
+   "fieldtype": "Data",
+   "label": "LC Beneficiary"
+  }
+ ],
+ "modified": "2021-01-28 11:10:09.615296",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel LC No",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "lc_no",
+ "track_changes": 1
+}

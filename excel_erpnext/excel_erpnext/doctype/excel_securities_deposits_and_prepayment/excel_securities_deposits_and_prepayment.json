@@ -1,0 +1,50 @@
+{
+ "autoname": "field:securities_deposits_and_prepayment_no",
+ "creation": "2021-01-28 11:04:30.119752",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "securities_deposits_and_prepayment_no",
+  "date"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "securities_deposits_and_prepayment_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Securities Deposits and Prepayment No",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "modified": "2021-01-28 11:09:04.845892",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Securities Deposits and Prepayment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "securities_deposits_and_prepayment_no",
+ "track_changes": 1
+}

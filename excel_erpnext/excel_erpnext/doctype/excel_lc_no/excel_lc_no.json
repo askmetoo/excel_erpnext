@@ -7,10 +7,14 @@
  "field_order": [
   "lc_no",
   "lc_date",
-  "lc_beneficiary"
+  "lc_beneficiary",
+  "column_break_4",
+  "pi_no",
+  "pi_date"
  ],
  "fields": [
   {
+   "description": "If LC no is not available, enter the PI no here. Please make sure to input correct data here before using this dimension in any transaction.",
    "fieldname": "lc_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -27,9 +31,23 @@
    "fieldname": "lc_beneficiary",
    "fieldtype": "Data",
    "label": "LC Beneficiary"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pi_no",
+   "fieldtype": "Data",
+   "label": "PI No"
+  },
+  {
+   "fieldname": "pi_date",
+   "fieldtype": "Date",
+   "label": "PI Date"
   }
  ],
- "modified": "2021-01-30 14:16:23.263839",
+ "modified": "2021-02-01 15:04:26.623248",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC No",

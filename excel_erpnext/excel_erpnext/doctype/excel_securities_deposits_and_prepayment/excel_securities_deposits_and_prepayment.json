@@ -15,6 +15,7 @@
    "label": "Date"
   },
   {
+   "description": "Please make sure to input correct data here before using this dimension in any transaction.",
    "fieldname": "securities_deposits_and_prepayment_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -23,7 +24,7 @@
    "unique": 1
   }
  ],
- "modified": "2021-01-28 11:09:04.845892",
+ "modified": "2021-02-01 15:22:45.530381",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Securities Deposits and Prepayment",

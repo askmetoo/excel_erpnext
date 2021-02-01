@@ -9,6 +9,7 @@
  ],
  "fields": [
   {
+   "description": "Please make sure to input correct data here before using this dimension in any transaction.",
    "fieldname": "short_term_loan_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -17,7 +18,7 @@
    "unique": 1
   }
  ],
- "modified": "2021-01-28 11:02:24.838834",
+ "modified": "2021-02-01 15:23:07.219287",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Short Term Loan",

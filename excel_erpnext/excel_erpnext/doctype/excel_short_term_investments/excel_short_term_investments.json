@@ -10,6 +10,7 @@
  ],
  "fields": [
   {
+   "description": "Please make sure to input correct data here before using this dimension in any transaction.",
    "fieldname": "fdr_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -23,7 +24,7 @@
    "label": "FDR Date"
   }
  ],
- "modified": "2021-01-28 11:01:31.395723",
+ "modified": "2021-02-01 15:23:15.459752",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Short Term Investments",

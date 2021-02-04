@@ -13,13 +13,8 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"fieldtype": "Link",
 			"options": "Company",
 			"default": frappe.defaults.get_user_default("Company"),
-			"reqd": 1
-		},
-		{
-			"fieldname":"finance_book",
-			"label": __("Finance Book"),
-			"fieldtype": "Link",
-			"options": "Finance Book"
+			"reqd": 1,
+			"hidden": 1
 		},
 		{
 			"fieldname":"from_date",
@@ -38,27 +33,11 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"width": "60px"
 		},
 		{
-			"fieldname":"account",
-			"label": __("Account"),
+			"fieldname":"excel_territory",
+			"label": __("Territory"),
 			"fieldtype": "Link",
-			"options": "Account",
-			"get_query": function() {
-				var company = frappe.query_report.get_filter_value('company');
-				return {
-					"doctype": "Account",
-					"filters": {
-						"company": company,
-					}
-				}
-			}
-		},
-		{
-			"fieldname":"voucher_no",
-			"label": __("Voucher No"),
-			"fieldtype": "Data",
-			on_change: function() {
-				frappe.query_report.set_filter_value('group_by', "");
-			}
+			"options": "Territory",
+			"width": "60px"
 		},
 		{
 			"fieldtype": "Break",
@@ -69,6 +48,7 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"fieldtype": "Link",
 			"options": "Party Type",
 			"default": "Customer",
+			"hidden": 1,
 			on_change: function() {
 				frappe.query_report.set_filter_value('party', "");
 			}
@@ -121,24 +101,21 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"fieldtype": "Select",
 			"options": ["", __("Group by Voucher"), __("Group by Voucher (Consolidated)"),
 				__("Group by Account"), __("Group by Party")],
-			"default": __("Group by Voucher (Consolidated)")
-		},
-		{
-			"fieldname":"tax_id",
-			"label": __("Tax Id"),
-			"fieldtype": "Data",
+			"default": __("Group by Voucher (Consolidated)"),
 			"hidden": 1
 		},
 		{
 			"fieldname": "presentation_currency",
 			"label": __("Currency"),
 			"fieldtype": "Select",
-			"options": erpnext.get_presentation_currency_list()
+			"options": erpnext.get_presentation_currency_list(),
+			"hidden": 1
 		},
 		{
 			"fieldname":"cost_center",
 			"label": __("Cost Center"),
 			"fieldtype": "MultiSelectList",
+			"hidden": 1,
 			get_data: function(txt) {
 				return frappe.db.get_link_options('Cost Center', txt);
 			}
@@ -147,20 +124,11 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"fieldname":"project",
 			"label": __("Project"),
 			"fieldtype": "MultiSelectList",
+			"hidden": 1,
 			get_data: function(txt) {
 				return frappe.db.get_link_options('Project', txt);
 			}
 		},
-		{
-			"fieldname": "show_opening_entries",
-			"label": __("Show Opening Entries"),
-			"fieldtype": "Check"
-		},
-		{
-			"fieldname": "include_default_book_entries",
-			"label": __("Include Default Book Entries"),
-			"fieldtype": "Check"
-		}
 	]
 }
 

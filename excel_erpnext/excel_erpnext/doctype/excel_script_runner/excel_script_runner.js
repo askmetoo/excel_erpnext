@@ -17,7 +17,7 @@ frappe.ui.form.on('Excel Script Runner', {
       urlSearchParams.get("fromDate") &&
       urlSearchParams.get("toDate")
     ) {
-      frappe.set_route("query-report", "General Ledger", {
+      frappe.set_route("query-report", "Excel Customer Ledger", {
         party_type: "Customer",
         party: urlSearchParams.get("customer"),
         from_date: urlSearchParams.get("fromDate"),

@@ -1,0 +1,78 @@
+my custom
+
+<h2 class="text-center">{%= __("Customer Ledger") %}</h2>
+<h4 class="text-center">
+        {% if (filters.party_name) { %}
+                {%= filters.party_name %}
+        {% } else if (filters.party) { %}
+                {%= filters.party %}
+        {% } else if (filters.account) { %}
+                {%= filters.account %}
+        {% } %}
+</h4>
+<h5 class="text-center">
+        {%= dateutil.str_to_user(filters.from_date) %}
+        {%= __("to") %}
+        {%= dateutil.str_to_user(filters.to_date) %}
+</h5>
+<table class="table table-bordered">
+        <thead>
+                <tr>
+                        <th style="width: 12%">{%= __("Date") %}</th>
+			<th style="width: 23%">{%= __("Voucher No") %}</th>
+			<th style="width: 13%">{%= __("Details") %}</th>
+                        <th style="width: 17%; text-align: right">{%= __("Invoiced Amount")%}</th>
+                        <th style="width: 17%; text-align: right">{%= __("Paid Amount")%}</th>
+                        <th style="width: 18%; text-align: right">{%= __("Clsoing Balance")%}</th>
+                </tr>
+        </thead>
+        <tbody>
+                {% for(var i=0, l=data.length; i<l; i++) { %}
+                        <tr>
+                                {% if(data[i].posting_date) { %}
+                                        <td>{%= dateutil.str_to_user(data[i].posting_date) %}</td>
+                                        <td>{%= data[i].voucher_no %}</td>
+                                        <td>{%= data[i].against %}</td>
+
+                                        {% if(filters.print_in_account_currency) { %}
+                                                <td style="text-align: right">
+                                                        {%= format_currency(data[i].debit_in_account_currency, data[i].account_currency) %}
+                                                </td>
+                                                <td style="text-align: right">
+                                                        {%= format_currency(data[i].credit_in_account_currency, data[i].account_currency) %}
+                                                </td>
+                                                {% } else { %}
+                                                <td style="text-align: right">
+                                                        {%= format_currency(data[i].debit) %}</td>
+                                                <td style="text-align: right">
+                                                        {%= format_currency(data[i].credit) %}</td>
+                                        {% } %}
+
+                                        {% } else { %}
+                                        <td><b>{%= frappe.format(data[i].account, {fieldtype: "Link"}) || "&nbsp;" %}</b></td>
+                                        {% if(filters.print_in_account_currency) { %}
+                                                <td style="text-align: right">
+                                                        {%= data[i].account && format_currency(data[i].debit_in_account_currency, data[i].account_currency) %}</td>
+                                                <td style="text-align: right">
+                                                        {%= data[i].account && format_currency(data[i].credit_in_account_currency, data[i].account_currency) %}</td>
+                                                {% } else { %}
+                                                <td style="text-align: right">
+                                                        {%= data[i].account && format_currency(data[i].debit) %}
+                                                </td>
+                                                <td style="text-align: right">
+                                                        {%= data[i].account && format_currency(data[i].credit) %}
+                                                </td>
+                                        {% } %}
+                                {% } %}
+                                {% if(filters.print_in_account_currency) { %}
+                                        <td style="text-align: right">
+                                                {%= format_currency(data[i].balance_in_account_currency, data[i].account_currency) %}
+                                        </td>
+                                        {% } else { %}
+                                        <td style="text-align: right">{%= format_currency(data[i].balance) %}</td>
+                                {% } %}
+                        </tr>
+                {% } %}
+        </tbody>
+</table>
+<p class="text-right text-muted">Printed On {%= dateutil.str_to_user(dateutil.get_datetime_as_string()) %}</p>

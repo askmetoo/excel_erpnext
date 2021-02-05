@@ -9,6 +9,13 @@ def get_data():
 			"color": "grey",
 			"icon": "fa fa-cloud",
 			"type": "module",
-			"label": _("Excel ERPNext")
+			"label": _("Excel")
+		},
+		{
+			"module_name": "Excel Reports",
+			"color": "grey",
+			"icon": "fa fa-cloud",
+			"type": "module",
+			"label": _("Reports")
 		}
 	]

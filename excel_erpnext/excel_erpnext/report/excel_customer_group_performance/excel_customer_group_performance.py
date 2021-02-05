@@ -156,7 +156,7 @@ def get_data(filters=None):
 			"sales_collection_ratio": collection/record.net_sales,
 			"account_receivable_collection_ratio": collection/receivable if receivable > 0 else 0 ,
 			"sales_contribution": (record.net_sales/total_net_sales) * 100,
-			"collection_contribution": (collection/total_collection) * 100
+			"collection_contribution": (collection/total_collection) * 100 if collection > 0 else 0
 			}
 		data.append(row)
 	return data ,total_net_sales,total_collection,total_receivable

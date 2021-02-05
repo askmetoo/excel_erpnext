@@ -140,10 +140,13 @@ fixtures = [
                 "in",
                 [
                     "Delivery Note Item-excel_serials",
+                    "Item-has_excel_serials",
                     "Stock Entry Detail-excel_serials",
                     "Payment Entry-excel_tax_payment",
                     "Payment Entry-excel_territory",
                     "Journal Entry-excel_territory",
+                    "Journal Entry Account-excel_party_name",
+                    "Stock Entry-excel_territory",
                     "Bin-excel_item_name",
                     "Bin-excel_item_brand",
                     "Bin-excel_item_group",

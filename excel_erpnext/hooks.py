@@ -15,8 +15,8 @@ app_license = "AGPLv3"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/excel_erpnext/css/excel_erpnext.css"
-# app_include_js = "/assets/excel_erpnext/js/excel_erpnext.js"
+# app_include_css = "/assets/excel_erpnext/css/custom.css"
+# app_include_js = "/assets/excel_erpnext/js/custom.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/excel_erpnext/css/excel_erpnext.css"

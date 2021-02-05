@@ -25,7 +25,7 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Excel Product Teams"
+					"name": "Excel Product Team"
 				},
 				{
 					"type": "doctype",

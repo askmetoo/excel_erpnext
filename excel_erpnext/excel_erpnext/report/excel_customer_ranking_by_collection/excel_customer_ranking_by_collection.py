@@ -124,7 +124,7 @@ def get_data(filters=None):
 		collection_amount = frappe.db.sql(""" SELECT
                                 sum(paid_amount)
                                 FROM `tabPayment Entry`
-                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and tax_payment = "No" and party_type = "Customer"
+                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and excel_tax_payment = "No" and party_type = "Customer"
                                 """,(filters.get('from_date'),filters.get('to_date'),customer))
 		if collection_amount[0][0]:
 			collection += collection_amount[0][0]

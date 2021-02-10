@@ -72,7 +72,7 @@ def get_data(filters=None):
 			collection_amount = frappe.db.sql(""" SELECT
                                 sum(paid_amount)
                                 FROM `tabPayment Entry`
-                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and excel_tax_payment = "No" and payment_type = "Receive"
+                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and tax_payment = "No" and payment_type = "Receive"
                                 """,(filters.get('from_date'),filters.get('to_date'),str(i['name'])))
 			if collection_amount[0][0]:
 				collection += collection_amount[0][0]
@@ -82,7 +82,7 @@ def get_data(filters=None):
 		collection_amount = frappe.db.sql(""" SELECT
                                 sum(paid_amount)
                                 FROM `tabPayment Entry`
-                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and excel_tax_payment = "No" and payment_type = "Receive"
+                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and tax_payment = "No" and payment_type = "Receive"
                                 """,(filters.get('from_date'),filters.get('to_date')))
 		collection  = collection_amount[0][0]
 	row = {
@@ -110,8 +110,10 @@ def get_data(filters=None):
                                 order by posting_date, party"""
                         ,(i['name'],filters.get('to_date')),as_dict = 1)
 			for j in gl_entries:
-				debit += j['debit']
-				credit += j['credit']
+				if j['debit']:
+					debit += j['debit']
+				if j['credit']:
+					credit += j['credit']
 		receivable = debit - credit
 
 	else:
@@ -129,8 +131,10 @@ def get_data(filters=None):
 				order by posting_date, party"""
 			,(filters.get('to_date')),as_dict = 1)
 		for k in gl_entries:
-			debit += k['debit']
-			credit += k['credit']
+			if k['debit']:
+				debit += k['debit']
+			if k['credit']:
+				credit += k['credit']
 		receivable = debit - credit
 
 
@@ -226,7 +230,7 @@ def whole_net_sales_conditions(filters):
 def collection_conditions(filters):
 	conditions = ""
 	customer= []
-	conditions += "docstatus = 1 and excel_tax_payment = 'No' and payment_type = 'Receive' "
+	conditions += "docstatus = 1 and tax_payment = 'No' and payment_type = 'Receive' "
 	if filters.get("customer_group") and filters.get("territory"):
 		customer = frappe.db.sql(""" SELECT
                 name

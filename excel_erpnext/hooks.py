@@ -15,8 +15,8 @@ app_license = "AGPLv3"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/excel_erpnext/css/custom.css"
-# app_include_js = "/assets/excel_erpnext/js/custom.js"
+app_include_css = "/assets/excel_erpnext/css/excel_erpnext.css"
+app_include_js = "/assets/excel_erpnext/js/excel_erpnext.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/excel_erpnext/css/excel_erpnext.css"
@@ -140,12 +140,14 @@ fixtures = [
                 "in",
                 [
                     "Delivery Note Item-excel_serials",
+                    "Customer-excel_customer_bin_id",
+                    "Customer-excel_customer_trade_license",
+                    "Customer-excel_customer_nid",
                     "Item-has_excel_serials",
                     "Stock Entry Detail-excel_serials",
                     "Payment Entry-excel_tax_payment",
                     "Payment Entry-excel_territory",
                     "Journal Entry-excel_territory",
-                    "Journal Entry Account-excel_party_name",
                     "Stock Entry-excel_territory",
                     "Bin-excel_item_name",
                     "Bin-excel_item_brand",
@@ -165,7 +167,13 @@ fixtures = [
                     "Purchase Invoice-excel_lc_no",
                     "Purchase Invoice-excel_lc_date",
                     "Purchase Invoice-excel_pi_no",
-                    "Purchase Invoice-excel_pi_date", 
+                    "Purchase Invoice-excel_pi_date",
+                    "Asset-excel_customer_name", 
+                    "Asset-excel_asset_user",  
+                    "Asset-excel_project",  
+                    "Asset-excel_device_model",  
+                    "Asset-excel_device_serial", 
+                    "Asset-excel_remarks", 
                 ],
             ],
         ]

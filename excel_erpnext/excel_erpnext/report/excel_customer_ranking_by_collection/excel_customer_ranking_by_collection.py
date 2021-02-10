@@ -31,6 +31,12 @@ def get_columns():
 				"width": 150
 			},
 			{
+                                "label": ("Customer"),
+                                "fieldname": "customer_name",
+                                "fieldtype": "Data",
+                                "width": 150
+                        },
+			{
 				"label": ("Total Collection"),
 				"fieldname": "total_collection",
 				"fieldtype": "Currency",
@@ -72,6 +78,7 @@ def get_data(filters=None):
 			SELECT
 				si.total AS net_sales,
 				si.customer as customer,
+				si.customer_name as customer_name,
 				si.outstanding_amount AS total_outstanding
 			FROM
 				`tabSales Invoice` AS si,`tabSales Team` AS st ,`tabSales Invoice Item` AS sit
@@ -117,7 +124,7 @@ def get_data(filters=None):
 		collection_amount = frappe.db.sql(""" SELECT
                                 sum(paid_amount)
                                 FROM `tabPayment Entry`
-                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and excel_tax_payment = "No" and party_type = "Customer"
+                                where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and tax_payment = "No" and party_type = "Customer"
                                 """,(filters.get('from_date'),filters.get('to_date'),customer))
 		if collection_amount[0][0]:
 			collection += collection_amount[0][0]
@@ -133,7 +140,8 @@ def get_data(filters=None):
 					"total_outstanding": outstanding,
 					"sales_collection": (net_sales/collection) * 100 if collection > 0 else 0 ,
 					"outstanding_collection": (net_sales/outstanding) * 100,
-					"customer": customer
+					"customer": customer,
+					"customer_name":frappe.db.get_value("Customer",customer,"customer_name")
 				}
 		else:
 			row = {
@@ -143,7 +151,8 @@ def get_data(filters=None):
 					"total_outstanding": outstanding,
 					"sales_collection": 0,
 					"outstanding_collection": 0,
-					"customer": customer
+					"customer": customer,
+					"customer_name":frappe.db.get_value("Customer",customer,"customer_name")
 			}
 
 		data.append(row)

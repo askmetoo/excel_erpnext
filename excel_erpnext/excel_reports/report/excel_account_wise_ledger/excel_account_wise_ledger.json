@@ -7,7 +7,7 @@
  "doctype": "Report",
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2021-02-05 20:27:18.499614",
+ "modified": "2021-02-06 15:19:54.420656",
  "modified_by": "Administrator",
  "module": "Excel Reports",
  "name": "Excel Account Wise Ledger",
@@ -19,6 +19,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Accounts Manager"
   }
  ]
 }

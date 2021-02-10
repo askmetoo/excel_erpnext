@@ -8,32 +8,27 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "Default ETL",
- "modified": "2021-02-04 12:11:02.181713",
+ "modified": "2021-02-06 15:18:15.274940",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Company Performance Summary",
  "owner": "Administrator",
- "query": "SELECT\n    SUM(grand_total) AS \"Net Sales Total:Currency:120\",\n    SUM(grand_total - outstanding_amount) AS \"Collection:Currency:120\"\n    \nFROM\n\t`tabSales Invoice`\nWHERE \n    docstatus = 1     \n",
  "prepared_report": 0,
  "ref_doctype": "Sales Invoice",
  "report_name": "Excel Company Performance Summary",
  "report_type": "Script Report",
  "roles": [
-    {
-        "role": "Accounts User"
-       },
-       {
-        "role": "Accounts Manager"
-       },
-       {
-        "role": "Sales User"
-       },
-       {
-        "role": "Accounts View"
-       },
-       {
-        "role": "Sales Master Manager"
-       }
-     
+  {
+   "role": "Accounts Manager"
+  },
+  {
+    "role": "Managing Directors"
+   },
+   {
+    "role": "General Admin"
+   },
+  {
+   "role": "System Manager"
+  }
  ]
 }

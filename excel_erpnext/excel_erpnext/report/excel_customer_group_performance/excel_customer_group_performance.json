@@ -8,7 +8,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "Default ETL",
- "modified": "2021-02-04 12:55:16.630736",
+ "modified": "2021-02-06 15:17:20.900876",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Customer Group Performance",
@@ -19,20 +19,37 @@
  "report_type": "Script Report",
  "roles": [
     {
-     "role": "Accounts User"
-    },
-    {
      "role": "Accounts Manager"
     },
     {
-     "role": "Sales User"
-    },
+      "role": "Branch Accounts User"
+     },  
+     {
+      "role": "Branch Sales Creator"
+     },
+     {
+      "role": "Branch Sales Approver"
+     },
+     {
+      "role": "Branch Sales Manager"
+     },
+     {
+      "role": "Branch Sales Return User"
+     },
+     {
+      "role": "Branch Stock User"
+     },
+     {
+      "role": "Branch Stock Supervisor"
+     },
+     {
+      "role": "General Admin"
+     },
+     {
+      "role": "Branch Stock Manager"
+     },
     {
-     "role": "Accounts View"
-    },
-    {
-     "role": "Sales Master Manager"
+     "role": "System Manager"
     }
-  
- ]
+   ]
 }

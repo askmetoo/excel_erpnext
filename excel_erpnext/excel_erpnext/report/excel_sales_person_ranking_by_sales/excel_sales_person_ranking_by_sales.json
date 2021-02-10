@@ -8,32 +8,48 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "Default ETL",
- "modified": "2021-02-04 12:52:42.573551",
+ "modified": "2021-02-06 15:17:55.773514",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Sales Person Ranking By Sales",
  "owner": "Administrator",
  "prepared_report": 0,
- "query": "SELECT\n    si.territory AS \"Territory:Data:240\",\n    si.customer_group AS \"Customer Group:Data:120\",\n    SUM(si.outstanding_amount) AS \"Total Account Receivable:Currency:120\",\n    SUM(si.rounded_total) AS \"Net Sales:Currency:120\",\n    SUM(pe.paid_amount) AS \"Collection:Currency:120\",\n    ((SUM(pe.paid_amount) / sum(si.rounded_total) * 100)) AS \"Sales-Collection Ratio\",\n    ((SUM(pe.paid_amount) / SUM(si.outstanding_amount)) * 100) AS \"Account Receivable - Collection Ratio\"\n    \nFROM\n\t`tabSales Invoice` AS si,`tabPayment Entry` AS pe\nWHERE \n    si.docstatus = 1 and si.posting_date >= \"2020-12-01\" and si.posting_date <= \"2020-12-30\" and pe.posting_date >= \"2020-12-01\" and pe.posting_date <= \"2020-12-30\"\nGROUP BY \n    si.territory,si.customer_group\nLIMIT 2",
  "ref_doctype": "Sales Invoice",
  "report_name": "Excel Sales Person Ranking By Sales",
  "report_type": "Script Report",
  "roles": [
     {
-        "role": "Accounts User"
-       },
-       {
-        "role": "Accounts Manager"
-       },
-       {
-        "role": "Sales User"
-       },
-       {
-        "role": "Accounts View"
-       },
-       {
-        "role": "Sales Master Manager"
-       }
-     
- ]
+     "role": "Accounts Manager"
+    },
+    {
+      "role": "Branch Accounts User"
+     },  
+     {
+      "role": "Branch Sales Creator"
+     },
+     {
+      "role": "Branch Sales Approver"
+     },
+     {
+      "role": "Branch Sales Manager"
+     },
+     {
+      "role": "Branch Sales Return User"
+     },
+     {
+      "role": "Branch Stock User"
+     },
+     {
+      "role": "Branch Stock Supervisor"
+     },
+     {
+      "role": "General Admin"
+     },
+     {
+      "role": "Branch Stock Manager"
+     },
+    {
+     "role": "System Manager"
+    }
+   ]
 }

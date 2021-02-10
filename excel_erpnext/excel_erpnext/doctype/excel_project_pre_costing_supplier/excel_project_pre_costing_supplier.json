@@ -1,0 +1,27 @@
+{
+ "creation": "2021-02-07 16:36:08.527126",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier"
+ ],
+ "fields": [
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-02-07 16:36:08.527126",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Project Pre Costing Supplier",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

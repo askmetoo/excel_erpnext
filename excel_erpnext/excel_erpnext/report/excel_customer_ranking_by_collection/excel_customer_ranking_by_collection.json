@@ -8,7 +8,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "Default ETL",
- "modified": "2021-02-04 12:51:31.810756",
+ "modified": "2021-02-06 15:18:08.519046",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Customer Ranking By Collection",
@@ -19,20 +19,37 @@
  "report_type": "Script Report",
  "roles": [
     {
-        "role": "Accounts User"
-       },
-       {
-        "role": "Accounts Manager"
-       },
-       {
-        "role": "Sales User"
-       },
-       {
-        "role": "Accounts View"
-       },
-       {
-        "role": "Sales Master Manager"
-       }
-     
- ]
+     "role": "Accounts Manager"
+    },
+    {
+      "role": "Branch Accounts User"
+     },  
+     {
+      "role": "Branch Sales Creator"
+     },
+     {
+      "role": "Branch Sales Approver"
+     },
+     {
+      "role": "Branch Sales Manager"
+     },
+     {
+      "role": "Branch Sales Return User"
+     },
+     {
+      "role": "Branch Stock User"
+     },
+     {
+      "role": "Branch Stock Supervisor"
+     },
+     {
+      "role": "General Admin"
+     },
+     {
+      "role": "Branch Stock Manager"
+     },
+    {
+     "role": "System Manager"
+    }
+   ]
 }

@@ -1,0 +1,64 @@
+{
+ "add_total_row": 1,
+ "creation": "2021-02-14 10:52:50.208678",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Default ETL",
+ "modified": "2021-02-14 11:05:42.113670",
+ "modified_by": "Administrator",
+ "module": "Excel Reports",
+ "name": "Excel Product Ledger",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Stock Ledger Entry",
+ "report_name": "Excel Product Ledger",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Branch Accounts User"
+  },
+  {
+   "role": "Branch Sales Creator"
+  },
+  {
+   "role": "Branch Sales Approver"
+  },
+  {
+   "role": "Branch Sales Manager"
+  },
+  {
+   "role": "Branch Sales Return User"
+  },
+  {
+   "role": "Branch Stock User"
+  },
+  {
+   "role": "Branch Stock Supervisor"
+  },
+  {
+   "role": "Branch Stock Manager"
+  },
+  {
+   "role": "Branch Stock Manager"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "System Manager"
+  }
+ ]
+}

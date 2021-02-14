@@ -1,18 +1,257 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2021-01-28 12:25:14.446318",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
+  "pi_no",
+  "pi_date",
+  "column_break_4",
   "lc_no",
+  "lc_date",
+  "column_break_7",
+  "receive_date",
+  "supplier",
+  "supplier_name",
+  "section_break_7",
+  "conversion_rate",
+  "duty_cost",
+  "finance_cost_percentage",
+  "column_break_11",
+  "marketing_cost_percentage",
+  "insurance_cost",
+  "transport_cost",
+  "column_break_15",
+  "freight_cost",
+  "cnf_cost",
+  "section_break_18",
+  "lc_costing_items",
+  "section_break_20",
+  "total_quantity",
+  "total_fob_usd",
+  "total_fob_weightage",
+  "total_fob_bdt",
+  "total_selling_price",
+  "column_break_26",
+  "total_duty",
+  "total_finance",
+  "total_insurance",
+  "total_transport",
+  "total_margin",
+  "column_break_32",
+  "total_freight",
+  "total_cnf",
+  "total_marketing",
+  "total_landing_cost",
+  "total_margin_percentage",
   "amended_from"
  ],
  "fields": [
   {
    "fieldname": "lc_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "LC No"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "LCCOST-.#####"
+  },
+  {
+   "fieldname": "pi_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "PI No"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "receive_date",
+   "fieldtype": "Date",
+   "label": "Receive Date  "
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Currency",
+   "label": "Conversion Rate"
+  },
+  {
+   "fieldname": "duty_cost",
+   "fieldtype": "Currency",
+   "label": "Duty Cost"
+  },
+  {
+   "fieldname": "finance_cost_percentage",
+   "fieldtype": "Currency",
+   "label": "Finance Cost Percentage"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "marketing_cost_percentage",
+   "fieldtype": "Currency",
+   "label": "Marketing Cost Percentage"
+  },
+  {
+   "fieldname": "insurance_cost",
+   "fieldtype": "Currency",
+   "label": "Insurance Cost"
+  },
+  {
+   "fieldname": "transport_cost",
+   "fieldtype": "Currency",
+   "label": "Transport Cost"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freight_cost",
+   "fieldtype": "Currency",
+   "label": "Freight Cost"
+  },
+  {
+   "fieldname": "cnf_cost",
+   "fieldtype": "Currency",
+   "label": "CnF Cost"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "lc_costing_items",
+   "fieldtype": "Table",
+   "label": "LC Costing Items",
+   "options": "Excel LC Costing Items"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fob_usd",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total FOB USD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fob_weightage",
+   "fieldtype": "Float",
+   "label": "Total FOB Weightage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fob_bdt",
+   "fieldtype": "Currency",
+   "label": "Total FOB BDT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_selling_price",
+   "fieldtype": "Currency",
+   "label": "Total Selling Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_duty",
+   "fieldtype": "Currency",
+   "label": "Total Duty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_finance",
+   "fieldtype": "Currency",
+   "label": "Total Finance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_insurance",
+   "fieldtype": "Currency",
+   "label": "Total Insurance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_transport",
+   "fieldtype": "Currency",
+   "label": "Total Transport",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_margin",
+   "fieldtype": "Currency",
+   "label": "Total Margin",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_freight",
+   "fieldtype": "Currency",
+   "label": "Total Freight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cnf",
+   "fieldtype": "Currency",
+   "label": "Total CnF",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_marketing",
+   "fieldtype": "Currency",
+   "label": "Total Marketing",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_landing_cost",
+   "fieldtype": "Currency",
+   "label": "Total Landing Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_margin_percentage",
+   "fieldtype": "Currency",
+   "label": "Total Margin Percentage",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -22,30 +261,93 @@
    "options": "Excel LC Costing",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "pi_date",
+   "fieldtype": "Date",
+   "label": "PI Date"
+  },
+  {
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "LC Date"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Name",
+   "read_only": 1
   }
  ],
+ "hide_toolbar": 1,
  "is_submittable": 1,
- "modified": "2021-01-28 12:25:14.446318",
+ "modified": "2021-02-14 16:12:22.014778",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Costing",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "set_user_permissions": 1,
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Commercial User",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
  "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "supplier_name",
  "track_changes": 1
 }

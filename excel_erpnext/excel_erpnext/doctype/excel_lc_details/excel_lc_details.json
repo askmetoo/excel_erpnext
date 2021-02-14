@@ -1,18 +1,294 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2021-01-28 12:23:16.346310",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
+  "purchase_invoice",
+  "purchase_invoice_date",
+  "purchase_invoice_amount",
+  "ci_supplier_invoice_no",
   "lc_no",
+  "shipping_mode",
+  "destination_port",
+  "bill_of_entry_no",
+  "issuing_bank",
+  "pad_no",
+  "clearing_agent",
+  "price_term",
+  "insurance",
+  "us_dollar",
+  "excess_dollar",
+  "pad_amount",
+  "cnf",
+  "atvat",
+  "unloading",
+  "carriage",
+  "column_break_22",
+  "supplier",
+  "actual_supplier",
+  "pi_no",
+  "ci_supplier_invoice_date",
+  "lc_date",
+  "lc_type",
+  "shipment_port",
+  "bill_of_entry_date",
+  "advising_bank",
+  "ltr_no",
+  "importer",
+  "insurance_issuer",
+  "insurance_cover_no",
+  "us_dollar_rate",
+  "excess_dollar_rate",
+  "excess_tk",
+  "commission",
+  "ait",
+  "freight",
+  "grand_total",
   "amended_from"
  ],
  "fields": [
   {
    "fieldname": "lc_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "LC No"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "LCDTLS-.#####"
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fetch_from": "purchase_invoice.posting_date",
+   "fieldname": "purchase_invoice_date",
+   "fieldtype": "Data",
+   "label": "Purchase Invoice Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoice.grand_total",
+   "fieldname": "purchase_invoice_amount",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Purchase Invoice Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ci_supplier_invoice_no",
+   "fieldtype": "Data",
+   "label": "CI / Supplier Invoice No"
+  },
+  {
+   "fieldname": "shipping_mode",
+   "fieldtype": "Select",
+   "label": "Shipping Mode",
+   "options": "By Ship\nBy Air"
+  },
+  {
+   "fieldname": "destination_port",
+   "fieldtype": "Select",
+   "label": "Destination Port",
+   "options": "Chittagong\nDhaka\nBenapole"
+  },
+  {
+   "fieldname": "bill_of_entry_no",
+   "fieldtype": "Data",
+   "label": "Bill Of Entry No"
+  },
+  {
+   "fieldname": "issuing_bank",
+   "fieldtype": "Link",
+   "label": "Issuing Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "pad_no",
+   "fieldtype": "Data",
+   "label": "PAD No"
+  },
+  {
+   "fieldname": "clearing_agent",
+   "fieldtype": "Link",
+   "label": "Clearing Agent",
+   "options": "Excel Clearing Agent"
+  },
+  {
+   "fieldname": "price_term",
+   "fieldtype": "Data",
+   "label": "Price Term"
+  },
+  {
+   "fieldname": "insurance",
+   "fieldtype": "Currency",
+   "label": "Insurance"
+  },
+  {
+   "fieldname": "us_dollar",
+   "fieldtype": "Currency",
+   "label": "US Dollar"
+  },
+  {
+   "fieldname": "excess_dollar",
+   "fieldtype": "Currency",
+   "label": "Excess Dollar"
+  },
+  {
+   "fieldname": "pad_amount",
+   "fieldtype": "Currency",
+   "label": "Pad Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cnf",
+   "fieldtype": "Currency",
+   "label": "CnF"
+  },
+  {
+   "fieldname": "atvat",
+   "fieldtype": "Currency",
+   "label": "ATV / AT"
+  },
+  {
+   "fieldname": "unloading",
+   "fieldtype": "Currency",
+   "label": "Unloading"
+  },
+  {
+   "fieldname": "carriage",
+   "fieldtype": "Currency",
+   "label": "Carriage"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "purchase_invoice.supplier_name",
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoice.excel_actual_supplier_name",
+   "fieldname": "actual_supplier",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Actual Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pi_no",
+   "fieldtype": "Data",
+   "label": "PI No"
+  },
+  {
+   "fieldname": "ci_supplier_invoice_date",
+   "fieldtype": "Data",
+   "label": "CI / Supplier Invoice Date"
+  },
+  {
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "LC Date"
+  },
+  {
+   "fieldname": "lc_type",
+   "fieldtype": "Select",
+   "label": " LC Type",
+   "options": "Foreign\nLocal"
+  },
+  {
+   "fieldname": "shipment_port",
+   "fieldtype": "Select",
+   "label": "Shipment Port",
+   "options": "China\nHongkong\nIndonesia\nIndia"
+  },
+  {
+   "fieldname": "bill_of_entry_date",
+   "fieldtype": "Data",
+   "label": "Bill Of Entry Date"
+  },
+  {
+   "fieldname": "advising_bank",
+   "fieldtype": "Link",
+   "label": "Advising Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "ltr_no",
+   "fieldtype": "Data",
+   "label": " LTR No"
+  },
+  {
+   "fieldname": "importer",
+   "fieldtype": "Link",
+   "label": "Importer",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "insurance_issuer",
+   "fieldtype": "Data",
+   "label": "Insurance Issuer"
+  },
+  {
+   "fieldname": "insurance_cover_no",
+   "fieldtype": "Data",
+   "label": "Insurance Cover No"
+  },
+  {
+   "fieldname": "us_dollar_rate",
+   "fieldtype": "Currency",
+   "label": "US Dollar Rate"
+  },
+  {
+   "fieldname": "excess_dollar_rate",
+   "fieldtype": "Currency",
+   "label": "Excess Dollar Rate"
+  },
+  {
+   "fieldname": "excess_tk",
+   "fieldtype": "Currency",
+   "label": "Excess Tk",
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Currency",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "ait",
+   "fieldtype": "Currency",
+   "label": "AIT"
+  },
+  {
+   "fieldname": "freight",
+   "fieldtype": "Currency",
+   "label": "Freight"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "read_only": 1
   },
   {
    "fieldname": "amended_from",
@@ -25,27 +301,67 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2021-01-28 12:23:16.346310",
+ "modified": "2021-02-14 16:16:37.465024",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Details",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "set_user_permissions": 1,
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Commercial User",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
  "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "actual_supplier",
  "track_changes": 1
 }

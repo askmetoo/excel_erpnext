@@ -1,11 +1,38 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2021-01-28 12:24:00.974297",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "costing_type",
   "project",
+  "customer",
+  "purchase_vat_rate",
+  "column_break_5",
+  "naming_series",
+  "linked_precosting",
+  "date",
+  "sales_person",
+  "vat_ait_rate",
+  "section_break_11",
+  "excel_project_pre_costing_items",
+  "section_break_13",
+  "notes",
+  "column_break_15",
+  "excel_project_pre_costing_supplier",
+  "section_break_17",
+  "supplier_purchase_total",
+  "total_purchase_amount",
+  "total_sales_amount",
+  "total_vat_ait",
+  "column_break_22",
+  "total_commission",
+  "total_net_sales",
+  "total_gp",
+  "total_margin",
   "amended_from"
  ],
  "fields": [
@@ -16,12 +43,145 @@
    "options": "Project"
   },
   {
-   "fieldname": "amended_from",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "PRECOST-.#####\nFINALCOST-.#####"
+  },
+  {
+   "fieldname": "costing_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Costing Type",
+   "options": "\nPre Costing\nFinal Costing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Excel Project Pre Costing",
-   "print_hide": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "default": "0",
+   "fieldname": "purchase_vat_rate",
+   "fieldtype": "Float",
+   "label": "Purchase VAT Rate",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.costing_type == 'Final Costing';",
+   "fieldname": "linked_precosting",
+   "fieldtype": "Link",
+   "label": "Linked Precosting",
+   "options": "Excel Project Pre Costing"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person"
+  },
+  {
+   "default": "0",
+   "fieldname": "vat_ait_rate",
+   "fieldtype": "Float",
+   "label": " VAT AIT Rate",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "supplier_purchase_total",
+   "fieldtype": "Float",
+   "label": "Supplier Purchase Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_purchase_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Purchase Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_sales_amount",
+   "fieldtype": "Float",
+   "label": "Total Sales Amount",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_vat_ait",
+   "fieldtype": "Float",
+   "label": "Total VAT AIT",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_commission",
+   "fieldtype": "Float",
+   "label": "Total Commission",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_net_sales",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Net Sales",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_gp",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total GP",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_margin",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Margin (%)",
+   "precision": "2",
    "read_only": 1
   },
   {
@@ -32,16 +192,30 @@
    "options": "Excel Project Pre Costing",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "excel_project_pre_costing_items",
+   "fieldtype": "Table",
+   "label": "Project Pre Costing Items",
+   "options": "Excel Project Pre Costing Items"
+  },
+  {
+   "fieldname": "excel_project_pre_costing_supplier",
+   "fieldtype": "Table",
+   "label": "Project Pre Costing Supplier",
+   "options": "Excel Project Pre Costing Supplier"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-07 14:35:07.440679",
+ "modified": "2021-02-11 12:16:05.224844",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Pre Costing",
+ "name_case": "Title Case",
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -51,11 +225,26 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "project",
  "track_changes": 1
 }

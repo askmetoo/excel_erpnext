@@ -1,18 +1,254 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2021-01-28 12:26:01.319476",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
+  "brand",
+  "product_type",
+  "supplier",
+  "supplier_name",
+  "actual_pi_no",
+  "total_pi_value",
+  "advance_tt_value",
+  "lc_value",
+  "due_amount",
+  "lc_details_column",
+  "importer",
+  "shipper",
+  "lc_pi_no",
+  "lc_pi_value",
   "lc_no",
+  "lc_date",
+  "lc_opening_bank",
+  "insurance_provider",
+  "insurance_premium",
+  "column_break_22",
+  "freight_forwarder",
+  "on_board_date",
+  "container_size",
+  "bl_no",
+  "eta_at_port",
+  "freight_forwarder_bill",
+  "ci_value",
+  "cartoon_qty",
+  "docs_receiving_date",
+  "column_break_31",
+  "clearing_port",
+  "boe_no",
+  "boe_date",
+  "total_boe_tax_amount",
+  "cnf_agent",
+  "cnf_total_bill",
+  "transport_agency",
+  "eta_at_warehouse",
+  "pipeline_status",
   "amended_from"
  ],
  "fields": [
   {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Brand",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "product_type",
+   "fieldtype": "Data",
+   "label": "Product Type"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Name"
+  },
+  {
+   "fieldname": "actual_pi_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Actual PI No"
+  },
+  {
+   "fieldname": "total_pi_value",
+   "fieldtype": "Currency",
+   "label": "Total PI Value"
+  },
+  {
+   "fieldname": "advance_tt_value",
+   "fieldtype": "Currency",
+   "label": "Advance TT Value"
+  },
+  {
+   "fieldname": "due_amount",
+   "fieldtype": "Currency",
+   "label": "Due Amount"
+  },
+  {
+   "fieldname": "lc_details_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "importer",
+   "fieldtype": "Data",
+   "label": "Importer"
+  },
+  {
+   "fieldname": "shipper",
+   "fieldtype": "Data",
+   "label": "Shipper"
+  },
+  {
+   "fieldname": "lc_pi_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "LC PI No"
+  },
+  {
+   "fieldname": "lc_pi_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "LC PI Value"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "PIPELINE-.####"
+  },
+  {
    "fieldname": "lc_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "LC No"
+  },
+  {
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "LC Date"
+  },
+  {
+   "fieldname": "lc_opening_bank",
+   "fieldtype": "Link",
+   "label": "LC Opening Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "insurance_provider",
+   "fieldtype": "Data",
+   "label": "Insurance Provider"
+  },
+  {
+   "fieldname": "insurance_premium",
+   "fieldtype": "Currency",
+   "label": "Insurance Premium"
+  },
+  {
+   "fieldname": "freight_forwarder",
+   "fieldtype": "Data",
+   "label": "Freight Forwarder"
+  },
+  {
+   "fieldname": "on_board_date",
+   "fieldtype": "Date",
+   "label": "On Board Date"
+  },
+  {
+   "fieldname": "container_size",
+   "fieldtype": "Data",
+   "label": "Container Size"
+  },
+  {
+   "fieldname": "bl_no",
+   "fieldtype": "Data",
+   "label": "BL No"
+  },
+  {
+   "fieldname": "eta_at_port",
+   "fieldtype": "Date",
+   "label": "ETA at Port"
+  },
+  {
+   "fieldname": "freight_forwarder_bill",
+   "fieldtype": "Currency",
+   "label": "Freight Forwarder Bill"
+  },
+  {
+   "fieldname": "ci_value",
+   "fieldtype": "Currency",
+   "label": "CI Value"
+  },
+  {
+   "fieldname": "cartoon_qty",
+   "fieldtype": "Float",
+   "label": "Cartoon Qty"
+  },
+  {
+   "fieldname": "docs_receiving_date",
+   "fieldtype": "Date",
+   "label": "Docs Receiving Date"
+  },
+  {
+   "fieldname": "clearing_port",
+   "fieldtype": "Data",
+   "label": "Clearing Port"
+  },
+  {
+   "fieldname": "boe_no",
+   "fieldtype": "Data",
+   "label": "BOE No"
+  },
+  {
+   "fieldname": "boe_date",
+   "fieldtype": "Date",
+   "label": "BOE Date"
+  },
+  {
+   "fieldname": "total_boe_tax_amount",
+   "fieldtype": "Data",
+   "label": "Total BOE Tax Amount"
+  },
+  {
+   "fieldname": "cnf_agent",
+   "fieldtype": "Data",
+   "label": "CnF Agent"
+  },
+  {
+   "fieldname": "cnf_total_bill",
+   "fieldtype": "Currency",
+   "label": "CnF Total Bill"
+  },
+  {
+   "fieldname": "transport_agency",
+   "fieldtype": "Data",
+   "label": "Transport Agency"
+  },
+  {
+   "fieldname": "eta_at_warehouse",
+   "fieldtype": "Date",
+   "label": "ETA at Warehouse"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "amended_from",
@@ -22,10 +258,23 @@
    "options": "Excel LC Pipeline",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "pipeline_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Pipeline Status",
+   "options": "In Progress\nComplete"
+  },
+  {
+   "fieldname": "lc_value",
+   "fieldtype": "Currency",
+   "label": "LC Value"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-01-28 12:26:01.319476",
+ "modified": "2021-02-14 16:56:33.339070",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",
@@ -47,5 +296,6 @@
  "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
+ "title_field": "supplier_name",
  "track_changes": 1
 }

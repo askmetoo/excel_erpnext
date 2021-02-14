@@ -26,6 +26,12 @@ app_include_js = "/assets/excel_erpnext/js/excel_erpnext.js"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
+doctype_js = {
+    "Excel Project Pre Costing" : "public/js/excel_project_pre_costing.js", 
+    "Excel LC Details" : "public/js/excel_lc_details.js", 
+    "Excel LC Costing" : "public/js/excel_lc_costing.js", 
+    "Excel LC Pipeline" : "public/js/excel_lc_pipeline.js" 
+    }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -143,11 +149,17 @@ fixtures = [
                     "Customer-excel_customer_bin_id",
                     "Customer-excel_customer_trade_license",
                     "Customer-excel_customer_nid",
+                    "Customer-excel_security_cheque_amount",
+                    "Customer-excel_customer_tin_id",
+                    "Customer-excel_customer_owner_name",
+                    "Customer-excel_customer_owner_farther_name",
+                    "Customer-excel_customer_owner_permanent_address",
                     "Item-has_excel_serials",
                     "Stock Entry Detail-excel_serials",
                     "Payment Entry-excel_tax_payment",
                     "Payment Entry-excel_territory",
                     "Journal Entry-excel_territory",
+                    "Journal Entry Account-excel_party_name",
                     "Stock Entry-excel_territory",
                     "Bin-excel_item_name",
                     "Bin-excel_item_brand",

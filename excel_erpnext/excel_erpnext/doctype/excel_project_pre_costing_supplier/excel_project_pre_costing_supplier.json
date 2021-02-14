@@ -4,17 +4,37 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "supplier"
+  "supplier",
+  "supplier_name",
+  "supplier_purchase_amount"
  ],
  "fields": [
   {
+   "columns": 2,
    "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "columns": 5,
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
    "fieldtype": "Data",
-   "label": "Supplier"
+   "in_list_view": 1,
+   "label": "Supplier Name"
+  },
+  {
+   "columns": 3,
+   "fieldname": "supplier_purchase_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Purchase Amount"
   }
  ],
  "istable": 1,
- "modified": "2021-02-07 16:36:08.527126",
+ "modified": "2021-02-11 11:48:15.423110",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Pre Costing Supplier",

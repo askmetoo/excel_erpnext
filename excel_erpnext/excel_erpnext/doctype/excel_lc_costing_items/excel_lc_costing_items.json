@@ -5,28 +5,201 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
-  "amended_from"
+  "item_name",
+  "item_group",
+  "quantity",
+  "fob_usd",
+  "total_usd",
+  "fob_weightage",
+  "fob_bdt",
+  "total_bdt",
+  "duty",
+  "finance",
+  "column_break_12",
+  "insurance",
+  "transport",
+  "freight",
+  "cnf",
+  "marketing",
+  "landing_cost",
+  "selling_price",
+  "margin",
+  "margin_total"
  ],
  "fields": [
   {
+   "columns": 1,
    "fieldname": "item",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Item",
-   "options": "Item"
+   "options": "Item",
+   "reqd": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Excel LC Costing Items",
-   "print_hide": 1,
+   "columns": 1,
+   "fetch_from": "item.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item.item_group",
+   "fieldname": "item_group",
+   "fieldtype": "Data",
+   "label": "Item Group",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "columns": 1,
+   "fieldname": "fob_usd",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "FOB USD",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "total_usd",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total USD",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "fob_weightage",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "FOB Weightage",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "fob_bdt",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "FOB BDT",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total_bdt",
+   "fieldtype": "Currency",
+   "label": "Total BDT",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "duty",
+   "fieldtype": "Currency",
+   "label": "Duty",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "finance",
+   "fieldtype": "Currency",
+   "label": "Finance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "insurance",
+   "fieldtype": "Currency",
+   "label": "Insurance",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "transport",
+   "fieldtype": "Currency",
+   "label": "Transport",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "freight",
+   "fieldtype": "Currency",
+   "label": "Freight",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "cnf",
+   "fieldtype": "Currency",
+   "label": "CnF",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "marketing",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Marketing and OPEX",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "landing_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Landing Cost",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "selling_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Selling Price",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "margin",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Margin",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "margin_total",
+   "fieldtype": "Currency",
+   "label": "Margin Total",
+   "precision": "2",
    "read_only": 1
   }
  ],
- "is_submittable": 1,
  "istable": 1,
- "modified": "2021-01-28 12:25:41.225768",
+ "modified": "2021-02-14 15:27:00.105600",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Costing Items",

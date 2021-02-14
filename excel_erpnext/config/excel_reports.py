@@ -43,7 +43,13 @@ def get_data():
 					"doctype": "GL Entry",
 					"is_query_report": True,
 				},
-					{
+				{
+					"type": "report",
+					"name": "Excel Gross Profit by Costing",
+					"doctype": "Sales Invoice",
+					"is_query_report": True,
+				},
+				{
 					"type": "report",
 					"name": "Excel Customer Ranking By Collection",
 					"doctype": "Sales Invoice",
@@ -113,6 +119,30 @@ def get_data():
 					"type": "report",
 					"name": "Excel Stock Balance",
 					"doctype": "Stock Ledger Entry",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Product Ledger",
+					"doctype": "Stock Ledger Entry",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Purchase History",
+					"doctype": "Purchase Invoice",
+					"is_query_report": True,
+				},
+			]
+		},
+		{
+			"label": _("Commercial Reports"),
+			"icon": "fa fa-cog",
+			"items": [
+				{
+					"type": "report",
+					"name": "Excel LC Pipeline Status",
+					"doctype": "Excel LC Pipeline",
 					"is_query_report": True,
 				},
 			]

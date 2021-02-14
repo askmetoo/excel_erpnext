@@ -136,7 +136,7 @@ def get_data():
 			]
 		},
 		{
-			"label": _("Commercial Reports"),
+			"label": _("SCM Reports"),
 			"icon": "fa fa-cog",
 			"items": [
 				{

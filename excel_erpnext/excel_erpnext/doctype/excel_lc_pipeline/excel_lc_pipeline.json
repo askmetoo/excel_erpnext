@@ -8,9 +8,9 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "opening_date",
   "brand",
   "product_type",
-  "supplier",
   "supplier_name",
   "actual_pi_no",
   "total_pi_value",
@@ -52,10 +52,9 @@
  "fields": [
   {
    "fieldname": "brand",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_standard_filter": 1,
-   "label": "Brand",
-   "options": "Brand"
+   "label": "Brand"
   },
   {
    "fieldname": "product_type",
@@ -63,14 +62,6 @@
    "label": "Product Type"
   },
   {
-   "fieldname": "supplier",
-   "fieldtype": "Link",
-   "in_standard_filter": 1,
-   "label": "Supplier",
-   "options": "Supplier"
-  },
-  {
-   "fetch_from": "supplier.supplier_name",
    "fieldname": "supplier_name",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -143,9 +134,8 @@
   },
   {
    "fieldname": "lc_opening_bank",
-   "fieldtype": "Link",
-   "label": "LC Opening Bank",
-   "options": "Bank"
+   "fieldtype": "Data",
+   "label": "LC Opening Bank"
   },
   {
    "fieldname": "insurance_provider",
@@ -271,10 +261,15 @@
    "fieldname": "lc_value",
    "fieldtype": "Currency",
    "label": "LC Value"
+  },
+  {
+   "fieldname": "opening_date",
+   "fieldtype": "Date",
+   "label": "Opening Date"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-14 16:56:33.339070",
+ "modified": "2021-02-14 19:03:05.512120",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",
@@ -290,6 +285,20 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Commercial User",
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

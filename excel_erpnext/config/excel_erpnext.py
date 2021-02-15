@@ -42,7 +42,7 @@ def get_data():
 			]
 		},
 		{
-			"label": _("Commercials"),
+			"label": _("SCM"),
 			"icon": "fa fa-cog",
 			"items": [
 				{

@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "pipeline",
+  "section_break_3",
   "pi_no",
   "pi_date",
   "column_break_4",
@@ -15,7 +17,6 @@
   "lc_date",
   "column_break_7",
   "receive_date",
-  "supplier",
   "supplier_name",
   "section_break_7",
   "conversion_rate",
@@ -73,13 +74,6 @@
    "label": "PI No"
   },
   {
-   "fieldname": "supplier",
-   "fieldtype": "Link",
-   "in_standard_filter": 1,
-   "label": "Supplier",
-   "options": "Supplier"
-  },
-  {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
   },
@@ -131,6 +125,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "pipeline.freight_forwarder_bill",
    "fieldname": "freight_cost",
    "fieldtype": "Currency",
    "label": "Freight Cost"
@@ -277,17 +272,27 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "supplier.supplier_name",
    "fieldname": "supplier_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Supplier Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "If you wish to fetch values from the pipeline, select the pipeline. ",
+   "fieldname": "pipeline",
+   "fieldtype": "Link",
+   "label": "LC Pipeline",
+   "options": "Excel LC Pipeline"
   }
  ],
  "hide_toolbar": 1,
  "is_submittable": 1,
- "modified": "2021-02-14 16:12:22.014778",
+ "modified": "2021-02-14 19:25:14.832937",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Costing",

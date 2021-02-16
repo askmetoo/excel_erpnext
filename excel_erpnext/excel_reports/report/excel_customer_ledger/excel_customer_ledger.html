@@ -2,7 +2,7 @@
 <h4 class="text-center">
 	{% if (filters.party_name) { %}
 		{%= filters.party_name %}
-	{% } else if (filters.party && filters.party.length) { %}
+	{% } else if (filters.party && filters.show_name) { %}
 		{%= filters.party %}
 	{% } else if (filters.account) { %}
 		{%= filters.account %}
@@ -24,13 +24,12 @@
 <table class="table table-bordered">
         <thead>
                 <tr>
-                    <th style="width: 14%">{%= __("Date") %}</th>
-					<th style="width: 23%">{%= __("Voucher No") %}</th>
-					<th style="width: 24%">{%= __("Details") %}</th>
-                    <th style="width: 13%; text-align: right">{%= __("Debit")%}</th>
-                    <th style="width: 13%; text-align: right">{%= __("Credit")%}</th>
-                    <th style="width: 13%; text-align: right">{%= __("Balance")%}</th>
-					<th style="width: 13%; text-align: right">{%= __("Remarks")%}</th>
+                        <th style="width: 14%">{%= __("Date") %}</th>
+			<th style="width: 23%">{%= __("Voucher No") %}</th>
+			<th style="width: 24%">{%= __("Details") %}</th>
+                        <th style="width: 13%; text-align: right">{%= __("Debit")%}</th>
+                        <th style="width: 13%; text-align: right">{%= __("Credit")%}</th>
+                        <th style="width: 13%; text-align: right">{%= __("Balance")%}</th>
                 </tr>
         </thead>
 	<tbody>
@@ -65,7 +64,6 @@
 				<td style="text-align: right">
 					{%= format_currency(data[i].balance, filters.presentation_currency) %}
 				</td>
-				<td>{%= data[i].remarks %}</td>
 			</tr>
 		{% } %}
 	</tbody>

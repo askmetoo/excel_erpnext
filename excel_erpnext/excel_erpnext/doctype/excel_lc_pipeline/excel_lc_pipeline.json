@@ -30,8 +30,7 @@
   "bl_no",
   "final_destination",
   "column_break_22",
-  "etd",
-  "eta_at_port",
+  "carrier",
   "eta",
   "ci_value",
   "boe_no",
@@ -39,6 +38,7 @@
   "transport_agency",
   "cnf_agent",
   "etr",
+  "shipment_status",
   "pipeline_status",
   "amended_from"
  ],
@@ -131,11 +131,6 @@
    "label": "BL No"
   },
   {
-   "fieldname": "eta_at_port",
-   "fieldtype": "Date",
-   "label": "ETA at Port"
-  },
-  {
    "fieldname": "ci_value",
    "fieldtype": "Currency",
    "label": "CI Value"
@@ -207,11 +202,6 @@
    "label": "Final Destination"
   },
   {
-   "fieldname": "etd",
-   "fieldtype": "Date",
-   "label": "ETD"
-  },
-  {
    "fieldname": "eta",
    "fieldtype": "Date",
    "label": "ETA"
@@ -225,10 +215,20 @@
    "fieldname": "transport_agency",
    "fieldtype": "Data",
    "label": "Transport Agency"
+  },
+  {
+   "fieldname": "carrier",
+   "fieldtype": "Data",
+   "label": "Carrier"
+  },
+  {
+   "fieldname": "shipment_status",
+   "fieldtype": "Data",
+   "label": "Shipment Status"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-16 13:00:53.836094",
+ "modified": "2021-02-16 14:33:20.148045",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",
@@ -247,15 +247,28 @@
    "write": 1
   },
   {
-   "cancel": 1,
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Branch Commercial User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Commercial Manager",
    "share": 1,
    "submit": 1,
    "write": 1

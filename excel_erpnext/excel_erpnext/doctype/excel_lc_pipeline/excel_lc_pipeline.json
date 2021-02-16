@@ -8,44 +8,37 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "opening_date",
+  "file_no",
   "brand",
-  "product_type",
+  "lot_no",
   "supplier_name",
   "actual_pi_no",
-  "total_pi_value",
-  "advance_tt_value",
-  "lc_value",
-  "due_amount",
-  "lc_details_column",
-  "importer",
-  "shipper",
+  "actual_pi_value",
   "lc_pi_no",
   "lc_pi_value",
   "lc_no",
   "lc_date",
+  "lc_details_column",
   "lc_opening_bank",
+  "shipper",
+  "cnee_name",
   "insurance_provider",
-  "insurance_premium",
-  "column_break_22",
   "freight_forwarder",
   "on_board_date",
   "container_size",
+  "carton_qty",
   "bl_no",
+  "final_destination",
+  "column_break_22",
+  "etd",
   "eta_at_port",
-  "freight_forwarder_bill",
+  "eta",
   "ci_value",
-  "cartoon_qty",
-  "docs_receiving_date",
-  "column_break_31",
-  "clearing_port",
   "boe_no",
   "boe_date",
-  "total_boe_tax_amount",
-  "cnf_agent",
-  "cnf_total_bill",
   "transport_agency",
-  "eta_at_warehouse",
+  "cnf_agent",
+  "etr",
   "pipeline_status",
   "amended_from"
  ],
@@ -55,11 +48,6 @@
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "Brand"
-  },
-  {
-   "fieldname": "product_type",
-   "fieldtype": "Data",
-   "label": "Product Type"
   },
   {
    "fieldname": "supplier_name",
@@ -74,28 +62,8 @@
    "label": "Actual PI No"
   },
   {
-   "fieldname": "total_pi_value",
-   "fieldtype": "Currency",
-   "label": "Total PI Value"
-  },
-  {
-   "fieldname": "advance_tt_value",
-   "fieldtype": "Currency",
-   "label": "Advance TT Value"
-  },
-  {
-   "fieldname": "due_amount",
-   "fieldtype": "Currency",
-   "label": "Due Amount"
-  },
-  {
    "fieldname": "lc_details_column",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "importer",
-   "fieldtype": "Data",
-   "label": "Importer"
   },
   {
    "fieldname": "shipper",
@@ -143,14 +111,9 @@
    "label": "Insurance Provider"
   },
   {
-   "fieldname": "insurance_premium",
-   "fieldtype": "Currency",
-   "label": "Insurance Premium"
-  },
-  {
    "fieldname": "freight_forwarder",
    "fieldtype": "Data",
-   "label": "Freight Forwarder"
+   "label": "Freight Forwarder Name"
   },
   {
    "fieldname": "on_board_date",
@@ -173,29 +136,9 @@
    "label": "ETA at Port"
   },
   {
-   "fieldname": "freight_forwarder_bill",
-   "fieldtype": "Currency",
-   "label": "Freight Forwarder Bill"
-  },
-  {
    "fieldname": "ci_value",
    "fieldtype": "Currency",
    "label": "CI Value"
-  },
-  {
-   "fieldname": "cartoon_qty",
-   "fieldtype": "Float",
-   "label": "Cartoon Qty"
-  },
-  {
-   "fieldname": "docs_receiving_date",
-   "fieldtype": "Date",
-   "label": "Docs Receiving Date"
-  },
-  {
-   "fieldname": "clearing_port",
-   "fieldtype": "Data",
-   "label": "Clearing Port"
   },
   {
    "fieldname": "boe_no",
@@ -208,36 +151,12 @@
    "label": "BOE Date"
   },
   {
-   "fieldname": "total_boe_tax_amount",
-   "fieldtype": "Data",
-   "label": "Total BOE Tax Amount"
-  },
-  {
    "fieldname": "cnf_agent",
    "fieldtype": "Data",
    "label": "CnF Agent"
   },
   {
-   "fieldname": "cnf_total_bill",
-   "fieldtype": "Currency",
-   "label": "CnF Total Bill"
-  },
-  {
-   "fieldname": "transport_agency",
-   "fieldtype": "Data",
-   "label": "Transport Agency"
-  },
-  {
-   "fieldname": "eta_at_warehouse",
-   "fieldtype": "Date",
-   "label": "ETA at Warehouse"
-  },
-  {
    "fieldname": "column_break_22",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_31",
    "fieldtype": "Column Break"
   },
   {
@@ -258,18 +177,58 @@
    "options": "In Progress\nComplete"
   },
   {
-   "fieldname": "lc_value",
-   "fieldtype": "Currency",
-   "label": "LC Value"
+   "fieldname": "file_no",
+   "fieldtype": "Data",
+   "label": "File No"
   },
   {
-   "fieldname": "opening_date",
+   "fieldname": "lot_no",
+   "fieldtype": "Data",
+   "label": "Lot No"
+  },
+  {
+   "fieldname": "actual_pi_value",
+   "fieldtype": "Currency",
+   "label": "Actual PI Value"
+  },
+  {
+   "fieldname": "cnee_name",
+   "fieldtype": "Data",
+   "label": "CNEE Name"
+  },
+  {
+   "fieldname": "carton_qty",
+   "fieldtype": "Float",
+   "label": "Carton Qty"
+  },
+  {
+   "fieldname": "final_destination",
+   "fieldtype": "Data",
+   "label": "Final Destination"
+  },
+  {
+   "fieldname": "etd",
    "fieldtype": "Date",
-   "label": "Opening Date"
+   "label": "ETD"
+  },
+  {
+   "fieldname": "eta",
+   "fieldtype": "Date",
+   "label": "ETA"
+  },
+  {
+   "fieldname": "etr",
+   "fieldtype": "Date",
+   "label": "ETR"
+  },
+  {
+   "fieldname": "transport_agency",
+   "fieldtype": "Data",
+   "label": "Transport Agency"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-14 19:03:05.512120",
+ "modified": "2021-02-16 13:00:53.836094",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",

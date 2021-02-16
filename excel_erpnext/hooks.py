@@ -186,6 +186,8 @@ fixtures = [
                     "Asset-excel_device_model",  
                     "Asset-excel_device_serial", 
                     "Asset-excel_remarks", 
+                    "Project-excel_mps_assetss",
+                    "Project-excel_mps_project_assets", 
                 ],
             ],
         ]

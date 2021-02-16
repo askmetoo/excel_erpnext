@@ -1,0 +1,38 @@
+{
+ "creation": "2021-02-16 13:08:48.330742",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "asset_code",
+  "asset_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "asset_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Asset Code",
+   "options": "Asset"
+  },
+  {
+   "fetch_from": "asset_code.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Asset Name",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-02-16 13:08:48.330742",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel MPS Project Assets",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

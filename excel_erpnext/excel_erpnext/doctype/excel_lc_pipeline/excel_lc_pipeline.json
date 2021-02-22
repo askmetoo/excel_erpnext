@@ -13,11 +13,13 @@
   "lot_no",
   "supplier_name",
   "actual_pi_no",
+  "actual_pi_date",
   "actual_pi_value",
+  "actual_pi_currency",
+  "lc_date",
+  "lc_no",
   "lc_pi_no",
   "lc_pi_value",
-  "lc_no",
-  "lc_date",
   "lc_details_column",
   "lc_opening_bank",
   "shipper",
@@ -29,15 +31,17 @@
   "carton_qty",
   "bl_no",
   "final_destination",
-  "column_break_22",
   "carrier",
+  "column_break_22",
   "eta",
+  "ci_no",
   "ci_value",
   "boe_no",
   "boe_date",
   "transport_agency",
   "cnf_agent",
   "etr",
+  "shipment_mode",
   "shipment_status",
   "pipeline_status",
   "amended_from"
@@ -225,10 +229,32 @@
    "fieldname": "shipment_status",
    "fieldtype": "Data",
    "label": "Shipment Status"
+  },
+  {
+   "fieldname": "actual_pi_date",
+   "fieldtype": "Date",
+   "label": "Actual PI Date"
+  },
+  {
+   "fieldname": "actual_pi_currency",
+   "fieldtype": "Select",
+   "label": "Actual PI Currency",
+   "options": "USD\nHKD"
+  },
+  {
+   "fieldname": "shipment_mode",
+   "fieldtype": "Select",
+   "label": "Shipment Mode",
+   "options": "By Sea\nBy Air\nBy Road"
+  },
+  {
+   "fieldname": "ci_no",
+   "fieldtype": "Data",
+   "label": "CI No"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-16 14:33:20.148045",
+ "modified": "2021-02-22 14:27:28.364484",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",

@@ -8,8 +8,6 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "pipeline",
-  "section_break_3",
   "pi_no",
   "pi_date",
   "column_break_4",
@@ -21,12 +19,13 @@
   "section_break_7",
   "conversion_rate",
   "duty_cost",
-  "finance_cost_percentage",
   "column_break_11",
+  "finance_cost_percentage",
   "marketing_cost_percentage",
+  "column_break_15",
   "insurance_cost",
   "transport_cost",
-  "column_break_15",
+  "column_break_19",
   "freight_cost",
   "cnf_cost",
   "section_break_18",
@@ -125,7 +124,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "pipeline.freight_forwarder_bill",
    "fieldname": "freight_cost",
    "fieldtype": "Currency",
    "label": "Freight Cost"
@@ -275,24 +273,16 @@
    "fieldname": "supplier_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Supplier Name",
-   "read_only": 1
+   "label": "Supplier Name"
   },
   {
-   "fieldname": "section_break_3",
-   "fieldtype": "Section Break"
-  },
-  {
-   "description": "If you wish to fetch values from the pipeline, select the pipeline. ",
-   "fieldname": "pipeline",
-   "fieldtype": "Link",
-   "label": "LC Pipeline",
-   "options": "Excel LC Pipeline"
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
   }
  ],
  "hide_toolbar": 1,
  "is_submittable": 1,
- "modified": "2021-02-14 19:25:14.832937",
+ "modified": "2021-02-17 12:11:42.475600",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Costing",
@@ -333,6 +323,18 @@
    "write": 1
   },
   {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Commercial User",
+   "share": 1,
+   "write": 1
+  },
+  {
    "amend": 1,
    "cancel": 1,
    "create": 1,
@@ -343,8 +345,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Branch Commercial User",
-   "set_user_permissions": 1,
+   "role": "Branch Commercial Manager",
    "share": 1,
    "submit": 1,
    "write": 1

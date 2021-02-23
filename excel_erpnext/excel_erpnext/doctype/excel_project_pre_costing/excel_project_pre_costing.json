@@ -10,6 +10,7 @@
   "costing_type",
   "project",
   "customer",
+  "customer_name",
   "purchase_vat_rate",
   "column_break_5",
   "naming_series",
@@ -204,10 +205,17 @@
    "fieldtype": "Table",
    "label": "Project Pre Costing Supplier",
    "options": "Excel Project Pre Costing Supplier"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-11 12:16:05.224844",
+ "modified": "2021-02-23 12:25:38.830592",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Pre Costing",

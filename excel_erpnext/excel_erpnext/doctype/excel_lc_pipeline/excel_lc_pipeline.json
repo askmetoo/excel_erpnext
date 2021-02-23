@@ -237,9 +237,9 @@
   },
   {
    "fieldname": "actual_pi_currency",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Actual PI Currency",
-   "options": "USD\nHKD"
+   "options": "Currency"
   },
   {
    "fieldname": "shipment_mode",
@@ -254,7 +254,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-22 14:27:28.364484",
+ "modified": "2021-02-23 17:04:21.532362",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",

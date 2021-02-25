@@ -14,7 +14,7 @@ function total_calc2(frm, cdt, cdn) {
 frappe.ui.form.on("Excel LC Pipeline", "eta", total_calc2);
 
 frappe.ui.form.on('Excel LC Pipeline', 'before_submit',  function(frm) {
-    if (frm.doc.pipeline_status !='Completed') {
+    if (frm.doc.pipeline_status !='Complete') {
         msgprint('The Pipeline Status is not completed yet!');
         validate = false;
     }

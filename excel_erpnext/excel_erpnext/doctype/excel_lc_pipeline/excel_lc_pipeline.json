@@ -32,6 +32,7 @@
   "bl_no",
   "final_destination",
   "carrier",
+  "courier",
   "column_break_22",
   "eta",
   "ci_no",
@@ -251,10 +252,15 @@
    "fieldname": "ci_no",
    "fieldtype": "Data",
    "label": "CI No"
+  },
+  {
+   "fieldname": "courier",
+   "fieldtype": "Data",
+   "label": "Courier"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-23 17:04:21.532362",
+ "modified": "2021-02-24 12:26:25.228112",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",

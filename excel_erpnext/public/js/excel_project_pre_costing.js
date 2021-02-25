@@ -35,21 +35,21 @@ function table_calc(frm, cdt, cdn) {
         frm.set_value("total_vat_ait", t_vat_ait);
     //Net Sales
         for ( let i in frm.doc.excel_project_pre_costing_items){
-            frm.doc.excel_project_pre_costing_items[i].net_sales = (frm.doc.excel_project_pre_costing_items[i].sales_amount - frm.doc.excel_project_pre_costing_items[i].vat_ait - frm.doc.excel_project_pre_costing_items[i].commission);
+            frm.doc.excel_project_pre_costing_items[i].net_sales = (frm.doc.excel_project_pre_costing_items[i].sales_amount - frm.doc.excel_project_pre_costing_items[i].vat_ait );
         }
         frm.refresh_field("excel_project_pre_costing_items");    
 
         var t_net_sales = 0;
         $.each(frm.doc.excel_project_pre_costing_items || [], function (i, d) {
-            t_net_sales += flt(d.sales_amount)- flt(d.vat_ait) - flt(d.commission);
+            t_net_sales += flt(d.sales_amount)- flt(d.vat_ait);
             });
-        frm.set_value("total_net_sales", t_net_sales);     
+        frm.set_value("total_net_sales", t_net_sales - frm.doc.total_commission);     
 
-        var t_commission = 0;
-        $.each(frm.doc.excel_project_pre_costing_items || [], function (i, d) {
-            t_commission += flt(d.commission);
-            });
-        frm.set_value("total_commission", t_commission); 
+        // var t_commission = 0;
+        // $.each(frm.doc.excel_project_pre_costing_items || [], function (i, d) {
+        //     t_commission += flt(d.commission);
+        //     });
+        // frm.set_value("total_commission", t_commission); 
     
     //GP
         for ( let i in frm.doc.excel_project_pre_costing_items){
@@ -61,7 +61,7 @@ function table_calc(frm, cdt, cdn) {
         $.each(frm.doc.excel_project_pre_costing_items || [], function (i, d) {
             t_gp += flt(d.net_sales)- flt(d.purchase_amount) - flt(d.purchase_vat);
             });
-        frm.set_value("total_gp", t_gp);
+        frm.set_value("total_gp", t_gp - frm.doc.total_commission);
 
     //margin    
         for ( let i in frm.doc.excel_project_pre_costing_items){
@@ -95,7 +95,7 @@ frappe.ui.form.on("Excel Project Pre Costing", "purchase_vat_rate", function(frm
 frappe.ui.form.on("Excel Project Pre Costing Items", "quantity", table_calc);
 frappe.ui.form.on("Excel Project Pre Costing Items", "sales_rate", table_calc);
 frappe.ui.form.on("Excel Project Pre Costing Items", "purchase_rate", table_calc);
-frappe.ui.form.on("Excel Project Pre Costing Items", "commission", table_calc);
+frappe.ui.form.on("Excel Project Pre Costing", "total_commission", table_calc);
 frappe.ui.form.on("Excel Project Pre Costing Items", "purchase_vat", table_calc);
 frappe.ui.form.on("Excel Project Pre Costing", "vat_ait_rate", table_calc);
 frappe.ui.form.on("Excel Project Pre Costing Items", "excel_project_pre_costing_items_remove", table_calc);

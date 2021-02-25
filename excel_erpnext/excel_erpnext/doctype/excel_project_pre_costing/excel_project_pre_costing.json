@@ -158,8 +158,7 @@
    "fieldname": "total_commission",
    "fieldtype": "Float",
    "label": "Total Commission",
-   "precision": "2",
-   "read_only": 1
+   "precision": "2"
   },
   {
    "fieldname": "total_net_sales",
@@ -215,7 +214,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-23 12:25:38.830592",
+ "modified": "2021-02-25 18:37:04.133666",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Pre Costing",

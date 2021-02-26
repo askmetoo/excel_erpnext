@@ -5,7 +5,8 @@
  "engine": "InnoDB",
  "field_order": [
   "supplier_name",
-  "supplier_purchase_amount"
+  "supplier_purchase_amount",
+  "mode_of_payment"
  ],
  "fields": [
   {
@@ -21,10 +22,17 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Purchase Amount"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Mode of Payment",
+   "options": "Cash\nCredit\nAdjustment"
   }
  ],
  "istable": 1,
- "modified": "2021-02-22 12:26:46.620835",
+ "modified": "2021-02-25 18:31:01.052882",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Pre Costing Supplier",

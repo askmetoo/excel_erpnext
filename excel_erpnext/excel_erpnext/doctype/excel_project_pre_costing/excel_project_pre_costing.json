@@ -10,6 +10,7 @@
   "costing_type",
   "project",
   "customer",
+  "customer_name",
   "purchase_vat_rate",
   "column_break_5",
   "naming_series",
@@ -157,8 +158,7 @@
    "fieldname": "total_commission",
    "fieldtype": "Float",
    "label": "Total Commission",
-   "precision": "2",
-   "read_only": 1
+   "precision": "2"
   },
   {
    "fieldname": "total_net_sales",
@@ -204,10 +204,17 @@
    "fieldtype": "Table",
    "label": "Project Pre Costing Supplier",
    "options": "Excel Project Pre Costing Supplier"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2021-02-11 12:16:05.224844",
+ "modified": "2021-02-25 18:37:04.133666",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Pre Costing",

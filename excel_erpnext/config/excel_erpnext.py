@@ -57,6 +57,37 @@ def get_data():
 					"type": "doctype",
 					"name": "Excel LC Details"
 				},
+				{		"type": "doctype",
+						"name": "Excel SCM Brand List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Supplier and Shipper List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Transport and CnF List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM LC Opening Bank List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM CNEE List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Insurance Provider List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Freight Forwarder List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Destination List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Shipment Status List"
+				},
+				{		"type": "doctype",
+						"name": "Excel SCM Shipment Mode List"
+				},
+
 			]
 		},
 		{

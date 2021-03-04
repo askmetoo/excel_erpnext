@@ -19,3 +19,16 @@ frappe.ui.form.on('Excel LC Pipeline', 'before_submit',  function(frm) {
         validate = false;
     }
 });
+
+// frappe.ui.form.on("Excel LC Pipeline", "validate", function(frm) {
+// var regex = /[^0-9A-ZÖÜÄÈÀÉ\s]/g;
+// if (regex.test(frm.doc.lot_no) === true){
+//     frappe.msgprint(__("Brand: Only uppercase letters, numbers and spaces are allowed."));
+//     frappe.validated = false;
+//     }
+// });
+frappe.ui.form.on("Excel LC Pipeline", {
+    onload_post_render: function(frm) {
+       $("form>.frappe-control input").css("text-transform", "uppercase");
+    }
+});

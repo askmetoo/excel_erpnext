@@ -145,6 +145,12 @@ def get_data():
 					"doctype": "Excel LC Pipeline",
 					"is_query_report": True,
 				},
+				{
+					"type": "report",
+					"name": "Excel LC Pipeline Summary",
+					"doctype": "Excel LC Pipeline",
+					"is_query_report": True,
+				},
 			]
 		},
 	]

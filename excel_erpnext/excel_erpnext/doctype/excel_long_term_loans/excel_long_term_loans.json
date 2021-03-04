@@ -1,4 +1,6 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "field:excel_long_term_loans_no",
  "creation": "2021-01-28 11:05:23.368085",
  "doctype": "DocType",
@@ -24,7 +26,7 @@
    "unique": 1
   }
  ],
- "modified": "2021-02-01 15:22:57.920771",
+ "modified": "2021-03-04 15:57:51.418590",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Long Term Loans",
@@ -35,10 +37,58 @@
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "General Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Accounts User",
    "share": 1,
    "write": 1
   }

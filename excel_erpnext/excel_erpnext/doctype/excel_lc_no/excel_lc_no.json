@@ -303,7 +303,7 @@
    "label": "ATV AT"
   }
  ],
- "modified": "2021-02-23 14:07:34.238688",
+ "modified": "2021-03-04 15:44:22.739214",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC No",
@@ -323,12 +323,45 @@
   },
   {
    "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "General Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Accounts User",
    "share": 1,
    "write": 1
   },
@@ -345,13 +378,12 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "General Admin",
+   "role": "Branch Commercial Manager",
    "share": 1,
    "write": 1
   }

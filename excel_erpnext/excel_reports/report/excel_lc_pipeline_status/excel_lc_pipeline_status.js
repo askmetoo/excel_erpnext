@@ -9,7 +9,7 @@ frappe.query_reports["Excel LC Pipeline Status"] = {
 			"label": __("Pipeline Status"),
 			"fieldtype": "Select",
 			"options": "Complete\nIn Progress",
-            "default": "Complete"
+            "default": "In Progress"
 		},
 	]
 }

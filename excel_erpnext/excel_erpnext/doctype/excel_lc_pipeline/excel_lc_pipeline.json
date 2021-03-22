@@ -44,6 +44,8 @@
   "transport_agency",
   "cnf_agent",
   "etr",
+  "goods_receiving_date",
+  "shipper_received_amount",
   "shipment_status",
   "pipeline_status",
   "amended_from"
@@ -293,10 +295,20 @@
   {
    "fieldname": "section_break_3",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "goods_receiving_date",
+   "fieldtype": "Date",
+   "label": "Goods Receiving Date"
+  },
+  {
+   "fieldname": "shipper_received_amount",
+   "fieldtype": "Currency",
+   "label": "Shipper Received Amount"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-03-08 13:45:31.691975",
+ "modified": "2021-03-22 17:52:01.150860",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel LC Pipeline",

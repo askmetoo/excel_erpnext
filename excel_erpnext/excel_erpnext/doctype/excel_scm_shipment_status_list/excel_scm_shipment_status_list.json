@@ -18,7 +18,7 @@
    "unique": 1
   }
  ],
- "modified": "2021-03-03 17:51:55.407550",
+ "modified": "2021-03-06 17:49:47.846229",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel SCM Shipment Status List",
@@ -37,15 +37,13 @@
    "write": 1
   },
   {
-   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Branch Commercial User",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
    "create": 1,

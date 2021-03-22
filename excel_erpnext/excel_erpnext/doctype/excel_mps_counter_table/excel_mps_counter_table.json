@@ -1,0 +1,87 @@
+{
+ "creation": "2021-03-08 13:05:06.876573",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "location",
+  "machine_details",
+  "previous_bw",
+  "previous_color",
+  "current_bw",
+  "current_color",
+  "total_bw",
+  "total_color"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location"
+  },
+  {
+   "columns": 3,
+   "fieldname": "machine_details",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Machine Details"
+  },
+  {
+   "columns": 1,
+   "fieldname": "previous_bw",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Previous BW"
+  },
+  {
+   "columns": 1,
+   "fieldname": "previous_color",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Previous Color"
+  },
+  {
+   "columns": 1,
+   "fieldname": "current_bw",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Current BW"
+  },
+  {
+   "columns": 1,
+   "fieldname": "current_color",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Current Color"
+  },
+  {
+   "columns": 1,
+   "fieldname": "total_bw",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total BW",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total_color",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Color",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-03-08 13:21:14.088864",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel MPS Counter Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

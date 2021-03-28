@@ -102,6 +102,10 @@ def get_data():
 					"type": "doctype",
 					"name": "Excel Quotation"
 				},
+				{
+					"type": "doctype",
+					"name": "Excel MPS Counter"
+				},				
 			]
 		},
 	]

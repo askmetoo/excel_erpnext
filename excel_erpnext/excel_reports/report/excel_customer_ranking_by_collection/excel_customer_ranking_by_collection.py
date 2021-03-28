@@ -31,11 +31,18 @@ def get_columns():
 				"width": 150
 			},
 			{
-            "label": ("Customer"),
-            "fieldname": "customer_name",
-            "fieldtype": "Data",
-            "width": 150
-            },
+                                "label": ("Territory"),
+                                "fieldname": "territory",
+                                "fieldtype": "Link",
+				"options": "Territory",
+                                "width": 150
+                        },
+			{
+                                "label": ("Customer"),
+                                "fieldname": "customer_name",
+                                "fieldtype": "Data",
+                                "width": 150
+                        },
 			{
 				"label": ("Total Collection"),
 				"fieldname": "total_collection",
@@ -127,7 +134,7 @@ def get_data(filters=None):
                                 where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and excel_tax_payment = "No" and party_type = "Customer"
                                 """,(filters.get('from_date'),filters.get('to_date'),customer))
 		if collection_amount[0][0]:
-			collection += collection_amount[0][0]
+			collection = collection_amount[0][0]
 #                               total_collection += collection_amount[0][0]
 		outstanding = debit - credit
 
@@ -135,6 +142,7 @@ def get_data(filters=None):
 		if not outstanding == 0:
 			row = {
 					"rank": rank,
+					"territory": frappe.db.get_value("Customer",customer,"territory"),
 					"net_sales": net_sales,
 					"total_collection": collection,
 					"total_outstanding": outstanding,
@@ -147,6 +155,7 @@ def get_data(filters=None):
 			row = {
 					"rank": rank,
 					"net_sales": net_sales,
+					"territory": frappe.db.get_value("Customer",customer,"territory"),
 					"total_collection": collection,
 					"total_outstanding": outstanding,
 					"sales_collection": 0,
@@ -156,6 +165,7 @@ def get_data(filters=None):
 			}
 
 		data.append(row)
+		collection = 0
 	data.sort(key=lambda x: x.get('total_collection'), reverse=True)
 	rank = 0
 	for i in data:

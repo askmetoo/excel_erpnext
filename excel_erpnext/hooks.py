@@ -194,6 +194,11 @@ fixtures = [
                     "Asset-excel_remarks", 
                     "Project-excel_mps_assetss",
                     "Project-excel_mps_project_assets", 
+                    "Sales Invoice-excel_customer_name_for_mps_print",
+                    "Stock Entry-excel_customer_name",
+                    "Stock Entry-excel_customer_address",
+                    "Stock Entry-excel_customer_contact",
+                    "Stock Entry-excel_customer_mobile",                                                            
                 ],
             ],
         ]

@@ -130,6 +130,7 @@ def get_data(filters=None):
                                 FROM `tabPayment Entry`
                                 where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and excel_tax_payment = "No" and payment_type = "Receive"
                                 """,(filters.get('from_date'),filters.get('to_date'),str(i['name'])))
+#			frappe.msgprint(str(collection_amount) + "customer" +str(i))
 			if collection_amount[0][0]:
 				collections += collection_amount[0][0]
 		outstanding = debit - credit
@@ -158,6 +159,7 @@ def get_data(filters=None):
                                         "salesperson": salesperson
                         }
 		data.append(row)
+		collections = 0
 	data.sort(key=lambda x: x.get('total_collection'), reverse=True)
 	rank = 0
 	for i in data:

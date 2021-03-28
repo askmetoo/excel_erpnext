@@ -22,7 +22,7 @@
    "label": "Location"
   },
   {
-   "columns": 3,
+   "columns": 2,
    "fieldname": "machine_details",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -33,14 +33,14 @@
    "fieldname": "previous_bw",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Previous BW"
+   "label": "Prev BW"
   },
   {
    "columns": 1,
    "fieldname": "previous_color",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Previous Color"
+   "label": "Prev Color"
   },
   {
    "columns": 1,
@@ -74,7 +74,7 @@
   }
  ],
  "istable": 1,
- "modified": "2021-03-08 13:21:14.088864",
+ "modified": "2021-03-28 16:02:29.183800",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel MPS Counter Table",

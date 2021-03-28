@@ -36,6 +36,13 @@ def get_columns():
                                 "fieldtype": "Data",
                                 "width": 150
                         },
+			{
+                                "label": ("Territory"),
+                                "fieldname": "territory",
+                                "fieldtype": "Link",
+                                "options": "Territory",
+                                "width": 150
+                        },
                         {
                                 "label": ("Net Sales"),
                                 "fieldname": "net_sales",
@@ -132,14 +139,15 @@ def get_data(filters=None):
                                 where docstatus = 1 and posting_date >= %s and posting_date <= %s and party = %s and excel_tax_payment = "No" and party_type = "Customer"
                                 """,(filters.get('from_date'),filters.get('to_date'),customer))
 		if collection_amount[0][0]:
-			collection += collection_amount[0][0]
+			collection = collection_amount[0][0]
 #                               total_collection += collection_amount[0][0]
 		outstanding = debit - credit
-
+		frappe.msgprint(str(collection) + " Customer " + str(customer))
 		if not outstanding == 0 and not collection == 0:
 			row = {
                                 "rank": rank,
                                 "net_sales": net_sales,
+				"territory": frappe.db.get_value("Customer",customer,"territory"),
                                 "total_collection": collection,
                                 "total_outstanding": outstanding,
                                 "sales_collection": (net_sales/collection) * 100,
@@ -151,6 +159,7 @@ def get_data(filters=None):
 			row = {
 				"rank": rank,
                                 "net_sales": net_sales,
+				"territory": frappe.db.get_value("Customer",customer,"territory"),
                                 "total_collection": collection,
                                 "total_outstanding": outstanding,
                                 "sales_collection": 0,
@@ -160,6 +169,7 @@ def get_data(filters=None):
 			}
 
 		data.append(row)
+		collection = 0
 	data.sort(key=lambda x: x.get('net_sales'), reverse=True)
 	rank = 0
 	for i in data:

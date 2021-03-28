@@ -117,7 +117,7 @@ def get_data(filters=None):
 		debit = 0
 		credit = 0
 		collection = 0
-		customer = frappe.db.sql("""select name as name from `tabCustomer` where customer_group = %s""",(record.customer_group),as_dict = 1)
+		customer = frappe.db.sql("""select name as name from `tabCustomer` where territory = %s""",(record.territory),as_dict = 1)
 		for i in customer:
 			gl_entrie = frappe.db.sql("""
                         select

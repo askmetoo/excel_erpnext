@@ -157,6 +157,7 @@ def get_data(filters=None):
                                         "salesperson": salesperson
                         }
 		data.append(row)
+		collections = 0
 	data.sort(key=lambda x: x.get('net_sales'), reverse=True)
 	rank = 0
 	for i in data:

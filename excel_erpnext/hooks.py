@@ -30,6 +30,8 @@ doctype_js = {
     "Excel Project Pre Costing" : "public/js/excel_project_pre_costing.js", 
     "Excel LC Details" : "public/js/excel_lc_details.js", 
     "Excel LC Costing" : "public/js/excel_lc_costing.js", 
+    "Excel LC No" : "public/js/excel_lc_no.js",
+    "Excel MPS Counter" : "public/js/excel_mps_counter.js",
     "Excel LC Pipeline" : "public/js/excel_lc_pipeline.js" 
     }
 # doctype_js = {"doctype" : "public/js/doctype.js"}

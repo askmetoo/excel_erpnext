@@ -10,6 +10,7 @@
   "naming_series",
   "customer",
   "customer_name",
+  "customer_name_print",
   "address",
   "attention",
   "column_break_7",
@@ -41,7 +42,8 @@
    "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "Customer Name"
+   "label": "Customer Name",
+   "read_only": 1
   },
   {
    "fieldname": "address",
@@ -105,10 +107,15 @@
    "fieldtype": "Int",
    "label": "Total Color",
    "read_only": 1
+  },
+  {
+   "fieldname": "customer_name_print",
+   "fieldtype": "Data",
+   "label": "Customer Name Print"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-03-28 17:59:31.385838",
+ "modified": "2021-03-31 16:59:42.799967",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel MPS Counter",

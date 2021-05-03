@@ -1,0 +1,42 @@
+{
+ "creation": "2021-05-03 10:32:19.128843",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "start_date_and_time",
+  "end_date_and_time",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "start_date_and_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Start Date and Time"
+  },
+  {
+   "fieldname": "end_date_and_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "End Date and Time"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-05-03 10:33:49.368331",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Tasks Status",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

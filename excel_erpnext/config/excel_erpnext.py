@@ -108,4 +108,22 @@ def get_data():
 				},				
 			]
 		},
+		{
+			"label": _("Support Team"),
+			"icon": "fa fa-cog",
+			"items": [
+				{
+					"type": "doctype",
+					"name": "Excel Daily Task"
+				},
+				{
+					"type": "doctype",
+					"name": "Issue"
+				},
+				{
+					"type": "doctype",
+					"name": "Task"
+				},				
+			]
+		},
 	]

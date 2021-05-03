@@ -73,22 +73,27 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2021-05-03 10:39:58.132281",
+ "modified": "2021-05-03 13:56:28.729211",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Daily Task",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "set_user_permissions": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   },
   {

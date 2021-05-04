@@ -5,7 +5,7 @@ COPY install_app.sh /install_app
 RUN apt-get update && apt-get install git -y && \
   /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-12
 
-FROM frappe/erpnext-nginx:v12.16.2
+FROM frappe/erpnext-nginx:v12.20.0
 
 COPY --from=0 /home/frappe/frappe-bench/sites/ /var/www/html/
 COPY --from=0 /rsync /rsync

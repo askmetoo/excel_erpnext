@@ -1,0 +1,42 @@
+{
+ "creation": "2021-05-31 17:08:16.007439",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "work_details",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "work_details",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Work Details"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-05-31 17:08:16.007439",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Project Tracking Daily Work Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

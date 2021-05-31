@@ -1,0 +1,229 @@
+{
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "PRT-.#####",
+ "creation": "2021-05-31 16:56:18.532416",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "project_name",
+  "project_incharge",
+  "project_status",
+  "column_break_4",
+  "start_date",
+  "end_date",
+  "expected_handover_date",
+  "si_details_section",
+  "customer_name",
+  "customer_address",
+  "customer_contact_person",
+  "customer_mobile",
+  "customer_email",
+  "customer_details_section",
+  "si_name",
+  "si_address",
+  "si_contact_person",
+  "si_mobile",
+  "si_email",
+  "section_break_20",
+  "project_tracking_items",
+  "daily_work",
+  "invoice_table",
+  "section_break_24",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "project_incharge",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Incharge"
+  },
+  {
+   "fieldname": "project_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Status",
+   "options": "Pending\nWork in Progress\nCompleted"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "End Date"
+  },
+  {
+   "fieldname": "expected_handover_date",
+   "fieldtype": "Date",
+   "label": "Expected Handover Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Excel Project Tracking",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Data",
+   "label": "Customer Address"
+  },
+  {
+   "fieldname": "customer_contact_person",
+   "fieldtype": "Data",
+   "label": "Customer Contact Person"
+  },
+  {
+   "fieldname": "customer_mobile",
+   "fieldtype": "Data",
+   "label": "Customer Mobile"
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Customer Email"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project_tracking_items",
+   "fieldtype": "Table",
+   "label": "Project Tracking Items",
+   "options": "Excel Project Tracking Items Table"
+  },
+  {
+   "fieldname": "daily_work",
+   "fieldtype": "Table",
+   "label": "Daily Work",
+   "options": "Excel Project Tracking Daily Work Table"
+  },
+  {
+   "fieldname": "invoice_table",
+   "fieldtype": "Table",
+   "label": "Invoice Table",
+   "options": "Excel Project Tracking Invoice Table"
+  },
+  {
+   "fieldname": "si_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer and SI Details"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "si_name",
+   "fieldtype": "Data",
+   "label": "SI Name"
+  },
+  {
+   "fieldname": "si_address",
+   "fieldtype": "Data",
+   "label": "SI Address"
+  },
+  {
+   "fieldname": "si_contact_person",
+   "fieldtype": "Data",
+   "label": "SI Contact Person"
+  },
+  {
+   "fieldname": "si_mobile",
+   "fieldtype": "Data",
+   "label": "SI Mobile"
+  },
+  {
+   "fieldname": "si_email",
+   "fieldtype": "Data",
+   "label": "SI  Email"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-05-31 18:35:45.675178",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Project Tracking",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Knowledge Base Editor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "project_name",
+ "track_changes": 1
+}

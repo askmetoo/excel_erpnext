@@ -114,6 +114,10 @@ def get_data():
 			"items": [
 				{
 					"type": "doctype",
+					"name": "Excel Project Tracking"
+				},
+				{
+					"type": "doctype",
 					"name": "Excel Daily Task"
 				},
 				{

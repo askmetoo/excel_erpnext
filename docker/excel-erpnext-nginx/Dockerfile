@@ -1,11 +1,11 @@
-FROM node:12-buster-slim
+FROM node:14-buster-slim
 
 COPY install_app.sh /install_app
 
 RUN apt-get update && apt-get install git -y && \
-  /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-12
+  /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-13
 
-FROM frappe/erpnext-nginx:v12.20.0
+FROM frappe/erpnext-nginx:v13.4.1
 
 COPY --from=0 /home/frappe/frappe-bench/sites/ /var/www/html/
 COPY --from=0 /rsync /rsync

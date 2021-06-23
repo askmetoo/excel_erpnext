@@ -93,7 +93,8 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"fieldname":"party_name",
 			"label": __("Party Name"),
 			"fieldtype": "Data",
-			"hidden": 1
+			"hidden": 0,
+			"read_only": 1,
 		},
 		{
 			"fieldname":"group_by",

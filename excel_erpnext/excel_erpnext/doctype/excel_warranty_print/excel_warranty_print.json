@@ -1,0 +1,265 @@
+{
+ "creation": "2021-06-23 19:03:54.593277",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "third_party_section",
+  "third_party_name",
+  "third_party_contact",
+  "third_party_address",
+  "customer_section",
+  "customer",
+  "customer_contact",
+  "customer_address",
+  "product_section",
+  "remarks",
+  "claim_no",
+  "received_on",
+  "delivery_date",
+  "receiving_branch",
+  "problem_details",
+  "delivered_by",
+  "received_by",
+  "items_section",
+  "items",
+  "s_warehouse",
+  "t_warehouse",
+  "terms_and_conditions_section",
+  "terms_and_conditions",
+  "tc_details",
+  "print_setting_section",
+  "select_print_heading",
+  "warranty_invoices_section",
+  "warranty_invoices",
+  "footer",
+  "uuid",
+  "delivery_status",
+  "print_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "third_party_section",
+   "fieldtype": "Section Break",
+   "label": "Third Party Information",
+   "read_only": 1
+  },
+  {
+   "fieldname": "third_party_name",
+   "fieldtype": "Data",
+   "label": "Third Party Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "third_party_contact",
+   "fieldtype": "Data",
+   "label": "Third Party Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "third_party_address",
+   "fieldtype": "Data",
+   "label": "Third Party Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Information"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_contact",
+   "fieldtype": "Data",
+   "label": "Customer No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Data",
+   "label": "Contact Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "product_section",
+   "fieldtype": "Section Break",
+   "label": "Product Information"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks",
+   "read_only": 1
+  },
+  {
+   "fieldname": "claim_no",
+   "fieldtype": "Data",
+   "label": "Claim No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "received_on",
+   "fieldtype": "Data",
+   "label": "Claim Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Data",
+   "label": "Delivery Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receiving_branch",
+   "fieldtype": "Data",
+   "label": "Claim Branch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "problem_details",
+   "fieldtype": "Data",
+   "label": "Problem Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivered_by",
+   "fieldtype": "Data",
+   "label": "Delivered By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Data",
+   "label": "Received By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Text",
+   "label": "Item1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "s_warehouse",
+   "fieldtype": "Data",
+   "label": "From Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "t_warehouse",
+   "fieldtype": "Data",
+   "label": "To Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "terms_and_conditions_section",
+   "fieldtype": "Section Break",
+   "label": "Terms and Conditions"
+  },
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Link",
+   "label": "Terms and Conditions",
+   "options": "Print Heading",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tc_details",
+   "fieldtype": "Text",
+   "label": "Terms and Conditions Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_setting_section",
+   "fieldtype": "Section Break",
+   "label": "Print Settings"
+  },
+  {
+   "fieldname": "select_print_heading",
+   "fieldtype": "Link",
+   "label": "Print Heading",
+   "options": "Print Heading",
+   "read_only": 1
+  },
+  {
+   "fieldname": "warranty_invoices_section",
+   "fieldtype": "Section Break",
+   "label": "Warranty Invoices"
+  },
+  {
+   "fieldname": "warranty_invoices",
+   "fieldtype": "Text",
+   "label": "Warranty Invoices",
+   "read_only": 1
+  },
+  {
+   "fieldname": "footer",
+   "fieldtype": "Data",
+   "label": "footer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "label": "uuid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Data",
+   "label": "Delivery Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_type",
+   "fieldtype": "Data",
+   "label": "Print Type",
+   "read_only": 1
+  }
+ ],
+ "modified": "2021-06-23 19:13:21.661123",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Warranty Print",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

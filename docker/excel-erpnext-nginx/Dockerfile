@@ -1,9 +1,11 @@
-FROM node:12-buster-slim
+FROM node:14-buster-slim
+ARG FRAPPE_BRANCH=version-12
+ARG BUILD_BRANCH=${FRAPPE_BRANCH}
 
 COPY install_app.sh /install_app
 
 RUN apt-get update && apt-get install git -y && \
-  /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git version-12
+  /install_app excel_erpnext https://gitlab.com/castlecraft/excel_erpnext.git ${BUILD_BRANCH} ${FRAPPE_BRANCH}
 
 FROM frappe/erpnext-nginx:v12.20.0
 

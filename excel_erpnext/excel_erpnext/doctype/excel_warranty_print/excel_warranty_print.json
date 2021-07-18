@@ -36,7 +36,14 @@
   "footer",
   "uuid",
   "delivery_status",
-  "print_type"
+  "print_type",
+  "problem",
+  "invoice_no",
+  "status_hisotry",
+  "claim_type",
+  "delivery_notes",
+  "posting_time",
+  "bulk_invoices"
  ],
  "fields": [
   {
@@ -147,7 +154,7 @@
   {
    "fieldname": "items",
    "fieldtype": "Text",
-   "label": "Item1",
+   "label": "Claimed Items",
    "read_only": 1
   },
   {
@@ -227,9 +234,51 @@
    "fieldtype": "Data",
    "label": "Print Type",
    "read_only": 1
+  },
+  {
+   "fieldname": "problem",
+   "fieldtype": "Data",
+   "label": "Problem",
+   "read_only": 1
+  },
+  {
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "Invoice No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_hisotry",
+   "fieldtype": "Text",
+   "label": "Status Hisotry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "claim_type",
+   "fieldtype": "Data",
+   "label": "Claim Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_notes",
+   "fieldtype": "Text",
+   "label": "Delivery Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Data",
+   "label": "Posting Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bulk_invoices",
+   "fieldtype": "Text",
+   "label": "Bulk Invoices",
+   "read_only": 1
   }
  ],
- "modified": "2021-06-26 14:00:00.840959",
+ "modified": "2021-07-18 18:14:50.941592",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Warranty Print",

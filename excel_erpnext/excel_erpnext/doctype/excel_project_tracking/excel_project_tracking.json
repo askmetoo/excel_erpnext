@@ -8,12 +8,14 @@
  "engine": "InnoDB",
  "field_order": [
   "project_name",
-  "project_incharge",
+  "project_category",
   "project_status",
+  "final_invoice_submission_date",
   "column_break_4",
   "start_date",
-  "end_date",
   "expected_handover_date",
+  "final_handover_date",
+  "final_invoice_submitted_by",
   "si_details_section",
   "customer_name",
   "customer_address",
@@ -27,9 +29,16 @@
   "si_mobile",
   "si_email",
   "section_break_20",
-  "project_tracking_items",
-  "daily_work",
   "invoice_table",
+  "project_tracking_items",
+  "section_break_26",
+  "project_incharge_sales",
+  "column_break_28",
+  "project_incharge_tech",
+  "section_break_30",
+  "excel_project_tracking_engineers",
+  "section_break_25",
+  "daily_work",
   "section_break_24",
   "remarks",
   "amended_from"
@@ -41,13 +50,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Project Name"
-  },
-  {
-   "fieldname": "project_incharge",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Project Incharge"
   },
   {
    "fieldname": "project_status",
@@ -67,12 +69,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Start Date"
-  },
-  {
-   "fieldname": "end_date",
-   "fieldtype": "Date",
-   "in_standard_filter": 1,
-   "label": "End Date"
   },
   {
    "fieldname": "expected_handover_date",
@@ -179,10 +175,66 @@
    "fieldname": "si_email",
    "fieldtype": "Data",
    "label": "SI  Email"
+  },
+  {
+   "fieldname": "project_incharge_sales",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Incharge (Sales)"
+  },
+  {
+   "fieldname": "project_incharge_tech",
+   "fieldtype": "Data",
+   "label": "Project Incharge (Tech)"
+  },
+  {
+   "fieldname": "final_handover_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Final Handover Date"
+  },
+  {
+   "fieldname": "project_category",
+   "fieldtype": "Select",
+   "label": "Project Category",
+   "options": "Networks and Surveillance\nPrinting\nUnified Communications\nMisc."
+  },
+  {
+   "fieldname": "final_invoice_submission_date",
+   "fieldtype": "Date",
+   "label": "Final Invoice Submission Date"
+  },
+  {
+   "fieldname": "final_invoice_submitted_by",
+   "fieldtype": "Data",
+   "label": "Final Invoice Submitted By"
+  },
+  {
+   "fieldname": "excel_project_tracking_engineers",
+   "fieldtype": "Table",
+   "label": "Excel Project Tracking Engineers",
+   "options": "Excel Project Tracking Engineers"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-05-31 18:35:45.675178",
+ "modified": "2021-08-05 13:54:22.872523",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Tracking",

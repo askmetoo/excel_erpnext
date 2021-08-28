@@ -24,12 +24,13 @@
 <table class="table table-bordered">
         <thead>
                 <tr>
-                    <th style="width: 14%">{%= __("Date") %}</th>
-					<th style="width: 23%">{%= __("Voucher No") %}</th>
-					<th style="width: 24%">{%= __("Details") %}</th>
-                    <th style="width: 13%; text-align: right">{%= __("Debit")%}</th>
-                    <th style="width: 13%; text-align: right">{%= __("Credit")%}</th>
-                    <th style="width: 13%; text-align: right">{%= __("Balance")%}</th>
+                    <th >{%= __("Date") %}</th>
+					<th >{%= __("Voucher No") %}</th>
+					<th >{%= __("Details") %}</th>
+                    <th style="text-align: right">{%= __("Debit")%}</th>
+                    <th style="text-align: right">{%= __("Credit")%}</th>
+                    <th style="text-align: right">{%= __("Balance")%}</th>
+					<th >{%= __("Remarks") %}</th>
                 </tr>
         </thead>
 	<tbody>
@@ -45,9 +46,7 @@
 					{% } %}
 
 					{%= data[i].against %}
-						{% if((data[i].remarks) != "No Remarks") { %}
-						<br>{%= __("Remarks") %}: {%= data[i].remarks %}
-						{% } %}
+						
 					</td>
 					<td style="text-align: right">
 						{%= format_currency(data[i].debit, filters.presentation_currency) %}</td>
@@ -66,6 +65,11 @@
 			{% } %}
 				<td style="text-align: right">
 					{%= format_currency(data[i].balance, filters.presentation_currency) %}
+				</td>
+				<td>
+					{% if((data[i].remarks) != "No Remarks") { %}
+					{%= data[i].remarks %}
+					{% } %}
 				</td>
 			</tr>
 		{% } %}

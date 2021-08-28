@@ -61,6 +61,18 @@ def get_data():
 					"doctype": "Sales Invoice",
 					"is_query_report": True,
 				},
+				{
+					"type": "report",
+					"name": "Excel Cheque in Hand",
+					"doctype": "Payment Entry",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Daily Collection",
+					"doctype": "Payment Entry",
+					"is_query_report": True,
+				},
 			]
 		},
 		{

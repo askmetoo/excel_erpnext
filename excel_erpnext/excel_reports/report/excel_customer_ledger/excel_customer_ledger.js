@@ -8,7 +8,7 @@
 frappe.query_reports["Excel Customer Ledger"] = {
 	"filters": [
 		{
-			"fieldname":"company",
+			"fieldname": "company",
 			"label": __("Company"),
 			"fieldtype": "Link",
 			"options": "Company",
@@ -17,15 +17,15 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"hidden": 1
 		},
 		{
-			"fieldname":"from_date",
+			"fieldname": "from_date",
 			"label": __("From Date"),
 			"fieldtype": "Date",
-			"default": frappe.datetime.add_months(frappe.datetime.get_today(), -1),
+			"default": frappe.datetime.get_today(),
 			"reqd": 1,
 			"width": "60px"
 		},
 		{
-			"fieldname":"to_date",
+			"fieldname": "to_date",
 			"label": __("To Date"),
 			"fieldtype": "Date",
 			"default": frappe.datetime.get_today(),
@@ -33,7 +33,7 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"width": "60px"
 		},
 		{
-			"fieldname":"excel_territory",
+			"fieldname": "excel_territory",
 			"label": __("Territory"),
 			"fieldtype": "Link",
 			"options": "Territory",
@@ -43,21 +43,21 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"fieldtype": "Break",
 		},
 		{
-			"fieldname":"party_type",
+			"fieldname": "party_type",
 			"label": __("Party Type"),
 			"fieldtype": "Link",
 			"options": "Party Type",
 			"default": "Customer",
 			"hidden": 1,
-			on_change: function() {
+			on_change: function () {
 				frappe.query_report.set_filter_value('party', "");
 			}
 		},
 		{
-			"fieldname":"party",
+			"fieldname": "party",
 			"label": __("Party"),
 			"fieldtype": "MultiSelectList",
-			get_data: function(txt) {
+			get_data: function (txt) {
 				if (!frappe.query_report.filters) return;
 
 				let party_type = frappe.query_report.get_filter_value('party_type');
@@ -65,23 +65,23 @@ frappe.query_reports["Excel Customer Ledger"] = {
 
 				return frappe.db.get_link_options(party_type, txt);
 			},
-			on_change: function() {
+			on_change: function () {
 				var party_type = frappe.query_report.get_filter_value('party_type');
 				var parties = frappe.query_report.get_filter_value('party');
 
-				if(!party_type || parties.length === 0 || parties.length > 1) {
+				if (!party_type || parties.length === 0 || parties.length > 1) {
 					frappe.query_report.set_filter_value('party_name', "");
 					frappe.query_report.set_filter_value('tax_id', "");
 					return;
 				} else {
 					var party = parties[0];
 					var fieldname = erpnext.utils.get_party_name(party_type) || "name";
-					frappe.db.get_value(party_type, party, fieldname, function(value) {
+					frappe.db.get_value(party_type, party, fieldname, function (value) {
 						frappe.query_report.set_filter_value('party_name', value[fieldname]);
 					});
 
 					if (party_type === "Customer" || party_type === "Supplier") {
-						frappe.db.get_value(party_type, party, "tax_id", function(value) {
+						frappe.db.get_value(party_type, party, "tax_id", function (value) {
 							frappe.query_report.set_filter_value('tax_id', value["tax_id"]);
 						});
 					}
@@ -90,14 +90,14 @@ frappe.query_reports["Excel Customer Ledger"] = {
 		},
 
 		{
-			"fieldname":"party_name",
+			"fieldname": "party_name",
 			"label": __("Party Name"),
 			"fieldtype": "Data",
 			"hidden": 0,
 			"read_only": 1,
 		},
 		{
-			"fieldname":"group_by",
+			"fieldname": "group_by",
 			"label": __("Group by"),
 			"fieldtype": "Select",
 			"options": ["", __("Group by Voucher"), __("Group by Voucher (Consolidated)"),
@@ -113,20 +113,20 @@ frappe.query_reports["Excel Customer Ledger"] = {
 			"hidden": 1
 		},
 		{
-			"fieldname":"cost_center",
+			"fieldname": "cost_center",
 			"label": __("Cost Center"),
 			"fieldtype": "MultiSelectList",
 			"hidden": 1,
-			get_data: function(txt) {
+			get_data: function (txt) {
 				return frappe.db.get_link_options('Cost Center', txt);
 			}
 		},
 		{
-			"fieldname":"project",
+			"fieldname": "project",
 			"label": __("Project"),
 			"fieldtype": "MultiSelectList",
 			"hidden": 1,
-			get_data: function(txt) {
+			get_data: function (txt) {
 				return frappe.db.get_link_options('Project', txt);
 			}
 		},
@@ -134,7 +134,7 @@ frappe.query_reports["Excel Customer Ledger"] = {
 }
 
 erpnext.dimension_filters.forEach((dimension) => {
-	frappe.query_reports["General Ledger"].filters.splice(15, 0 ,{
+	frappe.query_reports["General Ledger"].filters.splice(15, 0, {
 		"fieldname": dimension["fieldname"],
 		"label": __(dimension["label"]),
 		"fieldtype": "Link",

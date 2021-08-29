@@ -30,6 +30,9 @@
   "si_email",
   "section_break_20",
   "invoice_table",
+  "section_break_24",
+  "sales_invoice",
+  "get_items",
   "project_tracking_items",
   "section_break_26",
   "project_incharge_sales",
@@ -39,7 +42,7 @@
   "excel_project_tracking_engineers",
   "section_break_25",
   "daily_work",
-  "section_break_24",
+  "section_break_38",
   "remarks",
   "amended_from"
  ],
@@ -231,10 +234,25 @@
   {
    "fieldname": "section_break_25",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "label": "Get Items"
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break"
   }
  ],
  "is_submittable": 1,
- "modified": "2021-08-05 13:54:22.872523",
+ "modified": "2021-08-29 11:08:58.971398",
  "modified_by": "Administrator",
  "module": "Excel ERPNext",
  "name": "Excel Project Tracking",

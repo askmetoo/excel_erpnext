@@ -220,7 +220,10 @@ fixtures = [
                     "Task-excel_assigned_user_name_2",
                     "Task-excel_tasks_status",
                     "Task-excel_project",
-                    "Task-excel_team_name",                                                         
+                    "Task-excel_team_name",
+                    "Sales Invoice-mrp_sales_grand_total",
+                    "Sales Invoice Item-mrp_sales_rate",
+                    "Sales Invoice Item-mrp_sales_amount",
                 ],
             ],
         ]

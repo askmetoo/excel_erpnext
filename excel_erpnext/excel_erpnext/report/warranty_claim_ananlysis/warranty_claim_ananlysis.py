@@ -56,10 +56,10 @@ def get_result(filters):
 	if not frappe.get_conf().get("x-frappe-api-key"):
 		frappe.throw("x-frappe-api-key is Not in Headers")
 	
-	if not frappe.get_conf().get("url"):
+	if not frappe.get_conf().get("rma_server_url"):
 		frappe.throw("Request URL is Not in config")
 
-	url = frappe.get_conf().get("url")+"/api/warranty_claim_analysis/v1/list"
+	url = frappe.get_conf().get("rma_server_url")+"/api/warranty_claim_analysis/v1/list"
 	headers = {"x-frappe-api-key": frappe.get_conf().get("x-frappe-api-key")}
 	
 	response = requests.get(url,headers=headers,params=params)

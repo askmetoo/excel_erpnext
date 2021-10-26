@@ -34,7 +34,9 @@ def get_columns(filters):
 	]
 
 	return columns
+
 def get_result(filters):
+	
 	customer = frappe.db.get_value('Customer', {"name":filters.get("customer")}, ['customer_name'])
 	params = {
 		"fromDate":filters.get("from_date"),
@@ -50,12 +52,19 @@ def get_result(filters):
 		"third_party_name":filters.get("third_party_name"),
 		"thrid_party_mobile":filters.get("thrid_party_mobile"),
 	}
-	url = "http://testrma.excelbd.com/api/warranty_claim_analysis/v1/list"
-	headers = {"x-frappe-api-key": frappe.get_conf().get("x-frappe-api-key")}
+	
 	if not frappe.get_conf().get("x-frappe-api-key"):
 		frappe.throw("x-frappe-api-key is Not in Headers")
+	
+	if not frappe.get_conf().get("url"):
+		frappe.throw("Request URL is Not in config")
+
+	url = frappe.get_conf().get("url")+"/api/warranty_claim_analysis/v1/list"
+	headers = {"x-frappe-api-key": frappe.get_conf().get("x-frappe-api-key")}
+	
 	response = requests.get(url,headers=headers,params=params)
 	docs = json.loads(response.text)
+	
 	res = []
 	for i in docs.get("docs"):
 		sale_price = frappe.db.get_value('Item Price', {"price_list":filters.get("price_list"),"item_name":i.get("item_name"),"item_code":i.get("item_code")}, ['price_list_rate'])

@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Warranty Claim Ananlysis"] = {
+frappe.query_reports["Excel Warranty Claim Analysis"] = {
 	"filters": [
 		{
 			fieldname:"from_date",

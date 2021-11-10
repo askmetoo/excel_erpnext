@@ -1,0 +1,29 @@
+{
+ "add_total_row": 1,
+ "creation": "2021-10-06 15:03:05.520543",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Default ETL",
+ "modified": "2021-11-09 12:22:21.995184",
+ "modified_by": "Administrator",
+ "module": "Excel Reports",
+ "name": "ArcApps LC Pipeline Summary",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    `tabArcApps LC Pipeline`.name as \"ID:Link/ArcApps LC Pipeline:150\",\r\n    `tabArcApps LC Pipeline`.brand as \"Brand:Data/Brand:150\",\r\n    `tabArcApps LC Pipeline`.supplier_name as \"Supplier Name:Data/Supplier Name:150\",\r\n    `tabArcApps LC Pipeline`.actual_pi_no as \"Actual PI No:Data/Actual PI No:150\",\r\n    `tabArcApps LC Pipeline`.actual_pi_date as \"Actual PI Date:Date/Actual PI Date:150\",\r\n    `tabArcApps LC Pipeline`.actual_pi_value as \"Actual PI Value:Currency/Actual PI Value:150\",\r\n    `tabArcApps LC Pipeline`.actual_pi_currency as \"Actual PI Currency:Select/Actual PI Currency:150\",\r\n    `tabArcApps LC Pipeline`.container_size as \"Container Size:Data/Container Size:150\",\r\n\t`tabArcApps LC Pipeline`.final_destination as \"Final Destination:Currency/Final Destination:150\",\r\n    `tabArcApps LC Pipeline`.eta as \"ETA:Date/ETA:150\",\r\n    `tabArcApps LC Pipeline`.ci_value as \"CI Value:Currency/CI Value:150\",\r\n    `tabArcApps LC Pipeline`.etr as \"ETR:Date/ETR:150\",\r\n    `tabArcApps LC Pipeline`.shipment_mode as \"Shipment Mode:Select/Shipment Mode:150\",\r\n    `tabArcApps LC Pipeline`.shipment_status as \"Shipment Status:Data/Shipment Status:150\",\r\n    `tabArcApps LC Pipeline`.pipeline_status as \"Pipeline Status:Select/Pipeline Status:150\"\r\n\r\nFROM\r\n  `tabArcApps LC Pipeline`\r\n\r\n",
+ "ref_doctype": "ArcApps LC Pipeline",
+ "report_name": "ArcApps LC Pipeline Summary",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "ArcApps Report Manager"
+  }
+ ]
+}

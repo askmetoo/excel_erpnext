@@ -28,6 +28,7 @@ app_include_js = "/assets/excel_erpnext/js/excel_erpnext.js"
 # include js in doctype views
 doctype_js = {
     "Excel Project Pre Costing" : "public/js/excel_project_pre_costing.js", 
+    "ArcApps Project Pre Costing" : "public/js/excel_project_pre_costing.js",     
     "Excel LC Details" : "public/js/excel_lc_details.js", 
     "Excel LC Costing" : "public/js/excel_lc_costing.js", 
     "Excel LC No" : "public/js/excel_lc_no.js",

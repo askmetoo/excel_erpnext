@@ -8,7 +8,7 @@ frappe.query_reports["Excel Product Performance Analysis"] = {
 			"fieldname": "date_range",
 			"label": __("Date Range"),
 			"fieldtype": "DateRange",
-			"default": [frappe.datetime.add_months(frappe.datetime.get_today(),-1), frappe.datetime.get_today()],
+			"default": [frappe.datetime.add_months(frappe.datetime.get_today(), -1), frappe.datetime.get_today()],
 			"reqd": 1
 		},
 		{
@@ -26,17 +26,17 @@ frappe.query_reports["Excel Product Performance Analysis"] = {
 			"default": frappe.defaults.get_user_default("Company")
 		},
 		{
-                        "fieldname": "item_code",
-                        "label": __("Item"),
-                        "fieldtype": "Link",
-                        "options": "Item"
-                },
+			"fieldname": "item_code",
+			"label": __("Item"),
+			"fieldtype": "Link",
+			"options": "Item"
+		},
 		{
-                        "fieldname": "customer_group",
-                        "label": __("Customer Group"),
-                        "fieldtype": "Link",
-                        "options": "Customer Group"
-                },
+			"fieldname": "customer_group",
+			"label": __("Customer Group"),
+			"fieldtype": "Link",
+			"options": "Customer Group"
+		},
 		{
 			"fieldname": "territory",
 			"label": __("Territory"),
@@ -44,11 +44,11 @@ frappe.query_reports["Excel Product Performance Analysis"] = {
 			"options": "Territory"
 		},
 		{
-                        "fieldname": "sales_person",
-                        "label": __("Sales Person"),
-                        "fieldtype": "Link",
-                        "options": "Sales Person"
-                },
+			"fieldname": "sales_person",
+			"label": __("Sales Person"),
+			"fieldtype": "Link",
+			"options": "Sales Person"
+		},
 		{
 			"fieldname": "warehouse",
 			"label": __("Warehouse"),
@@ -71,11 +71,11 @@ frappe.query_reports["Excel Product Performance Analysis"] = {
 			"label": __("Group By"),
 			"fieldname": "group_by",
 			"fieldtype": "Select",
-			"options": ["Item Group"],
+			"options": ["Item Group", "Customer", "Customer Group", "Territory"],
 			"default": "Item Group"
 		}
 	],
-	"formatter": function(value, row, column, data, default_formatter) {
+	"formatter": function (value, row, column, data, default_formatter) {
 		value = default_formatter(value, row, column, data);
 		if (data && data.bold) {
 			value = value.bold();

@@ -1,0 +1,364 @@
+{
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-11-08 11:47:07.839038",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "shipment_mode",
+  "section_break_3",
+  "brand",
+  "lot_no",
+  "supplier_name",
+  "actual_pi_no",
+  "actual_pi_date",
+  "actual_pi_value",
+  "actual_pi_currency",
+  "lc_date",
+  "lc_no",
+  "lc_pi_no",
+  "lc_pi_value",
+  "lc_opening_bank",
+  "lc_details_column",
+  "shipper",
+  "cnee_name",
+  "insurance_provider",
+  "freight_forwarder",
+  "on_board_date",
+  "container_size",
+  "carton_qty",
+  "weight",
+  "bl_no",
+  "final_destination",
+  "carrier",
+  "eta",
+  "column_break_22",
+  "ci_no",
+  "ci_value",
+  "boe_no",
+  "boe_date",
+  "duty_payment_date",
+  "transport_agency",
+  "cnf_agent",
+  "etr",
+  "goods_receiving_date",
+  "shipper_received_amount",
+  "shipment_status",
+  "pipeline_status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "FILE-.####"
+  },
+  {
+   "fieldname": "shipment_mode",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shipment Mode",
+   "options": "Excel SCM Shipment Mode List"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Brand",
+   "options": "Excel SCM Brand List"
+  },
+  {
+   "fieldname": "lot_no",
+   "fieldtype": "Data",
+   "label": "Lot No"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Supplier Name",
+   "options": "Excel SCM Supplier and Shipper List"
+  },
+  {
+   "fieldname": "actual_pi_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Actual PI No"
+  },
+  {
+   "fieldname": "actual_pi_date",
+   "fieldtype": "Date",
+   "label": "Actual PI Date"
+  },
+  {
+   "fieldname": "actual_pi_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Actual PI Value"
+  },
+  {
+   "fieldname": "actual_pi_currency",
+   "fieldtype": "Link",
+   "label": "Actual PI Currency",
+   "options": "Currency"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "LC Date"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "lc_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "LC No"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "lc_pi_no",
+   "fieldtype": "Data",
+   "label": "LC PI No"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "lc_pi_value",
+   "fieldtype": "Currency",
+   "label": "LC PI Value"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "lc_opening_bank",
+   "fieldtype": "Link",
+   "label": "LC Opening Bank",
+   "options": "Excel SCM LC Opening Bank List"
+  },
+  {
+   "fieldname": "lc_details_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "shipper",
+   "fieldtype": "Link",
+   "label": "Shipper",
+   "options": "Excel SCM Supplier and Shipper List"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "cnee_name",
+   "fieldtype": "Link",
+   "label": "CNEE Name",
+   "options": "Excel SCM CNEE List"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "insurance_provider",
+   "fieldtype": "Link",
+   "label": "Insurance Provider",
+   "options": "Excel SCM Insurance Provider List"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "freight_forwarder",
+   "fieldtype": "Link",
+   "label": "Freight Forwarder Name",
+   "options": "Excel SCM Freight Forwarder List"
+  },
+  {
+   "fieldname": "on_board_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "On Board Date"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "container_size",
+   "fieldtype": "Data",
+   "label": "Container Size"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "carton_qty",
+   "fieldtype": "Int",
+   "label": "Carton Qty"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode == 'AIR BY C&F'\r\n",
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight (KG)"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "bl_no",
+   "fieldtype": "Data",
+   "label": "BL No"
+  },
+  {
+   "fieldname": "final_destination",
+   "fieldtype": "Link",
+   "label": "Final Destination",
+   "options": "Excel SCM Destination List"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "carrier",
+   "fieldtype": "Data",
+   "label": "Carrier"
+  },
+  {
+   "fieldname": "eta",
+   "fieldtype": "Date",
+   "label": "ETA"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ci_no",
+   "fieldtype": "Data",
+   "label": "CI No"
+  },
+  {
+   "fieldname": "ci_value",
+   "fieldtype": "Currency",
+   "label": "CI Value"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "boe_no",
+   "fieldtype": "Data",
+   "label": "BOE No"
+  },
+  {
+   "depends_on": "eval:doc.shipment_mode != 'AIR BY C&F'",
+   "fieldname": "boe_date",
+   "fieldtype": "Date",
+   "label": "BOE Date"
+  },
+  {
+   "fieldname": "duty_payment_date",
+   "fieldtype": "Date",
+   "label": "Duty Payment Date"
+  },
+  {
+   "fieldname": "transport_agency",
+   "fieldtype": "Link",
+   "label": "Transport Agency",
+   "options": "Excel SCM Transport and CnF List"
+  },
+  {
+   "fieldname": "cnf_agent",
+   "fieldtype": "Link",
+   "label": "CnF Agent",
+   "options": "Excel SCM Transport and CnF List"
+  },
+  {
+   "fieldname": "etr",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "ETR"
+  },
+  {
+   "fieldname": "goods_receiving_date",
+   "fieldtype": "Date",
+   "label": "Goods Receiving Date"
+  },
+  {
+   "fieldname": "shipper_received_amount",
+   "fieldtype": "Currency",
+   "label": "Shipper Received Amount"
+  },
+  {
+   "fieldname": "shipment_status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shipment Status",
+   "options": "Excel SCM Shipment Status List"
+  },
+  {
+   "fieldname": "pipeline_status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Pipeline Status",
+   "options": "In Progress\nComplete"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "ArcApps LC Pipeline",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "ArcApps LC Pipeline",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-11-08 18:22:28.616247",
+ "modified_by": "Administrator",
+ "module": "ArcApps",
+ "name": "ArcApps LC Pipeline",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ArcApps Document Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "brand",
+ "track_changes": 1
+}

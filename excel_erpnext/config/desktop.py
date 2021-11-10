@@ -12,6 +12,13 @@ def get_data():
 			"label": _("Excel")
 		},
 		{
+			"module_name": "ArcApps",
+			"color": "grey",
+			"icon": "fa fa-cloud",
+			"type": "module",
+			"label": _("ArcApps")
+		},
+		{
 			"module_name": "Excel Reports",
 			"color": "grey",
 			"icon": "fa fa-cloud",

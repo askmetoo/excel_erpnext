@@ -1,0 +1,342 @@
+{
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:lc_no",
+ "creation": "2021-10-06 13:51:21.927847",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lc_no",
+  "lc_type",
+  "lc_date",
+  "lc_beneficiary",
+  "pi_no",
+  "pi_date",
+  "purchase_invoice",
+  "purchase_invoice_date",
+  "purchase_invoice_amount",
+  "supplier",
+  "actual_supplier",
+  "ci_supplier_invoice_no",
+  "ci_supplier_invoice_date",
+  "shipping_mode",
+  "destination_port",
+  "column_break_11",
+  "bill_of_entry_no",
+  "bill_of_entry_date",
+  "issuing_bank",
+  "pad_no",
+  "clearing_agent",
+  "price_term",
+  "insurance",
+  "us_dollar",
+  "excess_dollar",
+  "pad_amount",
+  "cnf",
+  "atvat",
+  "unloading",
+  "carriage",
+  "column_break_29",
+  "shipment_port",
+  "advising_bank",
+  "ltr_no",
+  "importer",
+  "cnf_agent_name",
+  "insurance_issuer",
+  "insurance_cover_no",
+  "us_dollar_rate",
+  "excess_dollar_rate",
+  "excess_tk",
+  "commission",
+  "ait",
+  "freight",
+  "grand_total"
+ ],
+ "fields": [
+  {
+   "description": "If LC no is not available, enter the PI no here. Please make sure to input correct data here before using this dimension in any transaction.",
+   "fieldname": "lc_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "LC No",
+   "unique": 1
+  },
+  {
+   "fieldname": "lc_type",
+   "fieldtype": "Select",
+   "label": " LC Type",
+   "options": "Foreign\nLocal"
+  },
+  {
+   "fieldname": "lc_date",
+   "fieldtype": "Date",
+   "label": "LC Date"
+  },
+  {
+   "fieldname": "lc_beneficiary",
+   "fieldtype": "Data",
+   "label": "LC Beneficiary"
+  },
+  {
+   "fieldname": "pi_no",
+   "fieldtype": "Data",
+   "label": "PI No"
+  },
+  {
+   "fieldname": "pi_date",
+   "fieldtype": "Date",
+   "label": "PI Date"
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Purchase Invoice",
+   "options": "Purchase Invoice"
+  },
+  {
+   "fetch_from": "purchase_invoice.posting_date",
+   "fieldname": "purchase_invoice_date",
+   "fieldtype": "Date",
+   "label": "Purchase Invoice Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoice.grand_total",
+   "fieldname": "purchase_invoice_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Purchase Invoice Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoice.supplier_name",
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoice.excel_actual_supplier_name",
+   "fieldname": "actual_supplier",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Actual Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ci_supplier_invoice_no",
+   "fieldtype": "Data",
+   "label": "CI / Supplier Invoice No"
+  },
+  {
+   "fieldname": "ci_supplier_invoice_date",
+   "fieldtype": "Date",
+   "label": "CI / Supplier Invoice Date"
+  },
+  {
+   "fieldname": "shipping_mode",
+   "fieldtype": "Select",
+   "label": "Shipping Mode",
+   "options": "By Sea\nBy Air\nBy Road"
+  },
+  {
+   "fieldname": "destination_port",
+   "fieldtype": "Select",
+   "label": "Destination Port",
+   "options": "Chittagong\nDhaka\nBenapole"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bill_of_entry_no",
+   "fieldtype": "Data",
+   "label": "Bill Of Entry No"
+  },
+  {
+   "fieldname": "bill_of_entry_date",
+   "fieldtype": "Data",
+   "label": "Bill Of Entry Date"
+  },
+  {
+   "fieldname": "issuing_bank",
+   "fieldtype": "Data",
+   "label": "Issuing Bank"
+  },
+  {
+   "fieldname": "pad_no",
+   "fieldtype": "Data",
+   "label": "PAD No"
+  },
+  {
+   "fieldname": "clearing_agent",
+   "fieldtype": "Data",
+   "label": "Clearing Agent"
+  },
+  {
+   "fieldname": "price_term",
+   "fieldtype": "Data",
+   "label": "Price Term"
+  },
+  {
+   "fieldname": "insurance",
+   "fieldtype": "Currency",
+   "label": "Insurance"
+  },
+  {
+   "fieldname": "us_dollar",
+   "fieldtype": "Currency",
+   "label": "US Dollar"
+  },
+  {
+   "fieldname": "excess_dollar",
+   "fieldtype": "Currency",
+   "label": "Excess Dollar"
+  },
+  {
+   "fieldname": "pad_amount",
+   "fieldtype": "Currency",
+   "label": "Pad Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cnf",
+   "fieldtype": "Currency",
+   "label": "CnF"
+  },
+  {
+   "fieldname": "atvat",
+   "fieldtype": "Currency",
+   "label": "ATV AT"
+  },
+  {
+   "fieldname": "unloading",
+   "fieldtype": "Currency",
+   "label": "Unloading"
+  },
+  {
+   "fieldname": "carriage",
+   "fieldtype": "Currency",
+   "label": "Carriage"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipment_port",
+   "fieldtype": "Select",
+   "label": "Shipment Port",
+   "options": "China\nHongkong\nIndonesia\nIndia"
+  },
+  {
+   "fieldname": "advising_bank",
+   "fieldtype": "Data",
+   "label": "Advising Bank"
+  },
+  {
+   "fieldname": "ltr_no",
+   "fieldtype": "Data",
+   "label": " LTR No"
+  },
+  {
+   "fieldname": "importer",
+   "fieldtype": "Data",
+   "label": "Importer"
+  },
+  {
+   "fieldname": "cnf_agent_name",
+   "fieldtype": "Data",
+   "label": "CnF Agent Name"
+  },
+  {
+   "fieldname": "insurance_issuer",
+   "fieldtype": "Data",
+   "label": "Insurance Issuer"
+  },
+  {
+   "fieldname": "insurance_cover_no",
+   "fieldtype": "Data",
+   "label": "Insurance Cover No"
+  },
+  {
+   "fieldname": "us_dollar_rate",
+   "fieldtype": "Currency",
+   "label": "US Dollar Rate"
+  },
+  {
+   "fieldname": "excess_dollar_rate",
+   "fieldtype": "Currency",
+   "label": "Excess Dollar Rate"
+  },
+  {
+   "fieldname": "excess_tk",
+   "fieldtype": "Currency",
+   "label": "Excess Tk",
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Currency",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "ait",
+   "fieldtype": "Currency",
+   "label": "AIT"
+  },
+  {
+   "fieldname": "freight",
+   "fieldtype": "Currency",
+   "label": "Freight"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Grand Total",
+   "read_only": 1
+  }
+ ],
+ "modified": "2021-11-08 18:21:53.183778",
+ "modified_by": "Administrator",
+ "module": "ArcApps",
+ "name": "ArcApps LC No",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ArcApps Document Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "lc_no",
+ "track_changes": 1
+}

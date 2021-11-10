@@ -336,7 +336,7 @@ def get_items(filters, additional_query_columns):
 			`tabSales Invoice`.customer_group, `tabSales Invoice Item`.so_detail,
 			`tabSales Invoice`.update_stock, `tabSales Invoice Item`.uom, `tabSales Invoice Item`.qty {0}
 		from `tabSales Invoice`, `tabSales Invoice Item`, `tabSales Team`
-		where `tabSales Invoice`.name = `tabSales Invoice Item`.parent and `tabSales Invoice`.name = `tabSales Team`.parent
+		where `tabSales Invoice`.name = `tabSales Invoice Item`.parent
 			and `tabSales Invoice`.docstatus = 1 {1}
 		""".format(additional_query_columns or '', conditions), filters, as_dict=1) #nosec
 

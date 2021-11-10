@@ -1,0 +1,61 @@
+{
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:product_team_name",
+ "creation": "2021-10-06 13:56:09.418015",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "product_team_name"
+ ],
+ "fields": [
+  {
+   "description": "Please make sure to input correct data here before using this dimension in any transaction.",
+   "fieldname": "product_team_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Team Name",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "modified": "2021-11-08 18:23:03.652971",
+ "modified_by": "Administrator",
+ "module": "ArcApps",
+ "name": "ArcApps Product Team",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ArcApps Document Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "product_team_name",
+ "track_changes": 1
+}

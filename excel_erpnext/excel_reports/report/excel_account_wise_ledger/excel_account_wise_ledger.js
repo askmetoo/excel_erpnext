@@ -156,5 +156,15 @@ frappe.query_reports["Excel Account Wise Ledger"] = {
 	]
 }
 
-erpnext.utils.add_dimensions('General Ledger', 15)
+//erpnext.utils.add_dimensions('General Ledger', 15)
+
+erpnext.dimension_filters.forEach((dimension) => {
+	frappe.query_reports["Excel Account Wise Ledger"].filters.splice(15, 0, {
+		"fieldname": dimension["fieldname"],
+		"label": __(dimension["label"]),
+		"fieldtype": "Link",
+		"options": dimension["document_type"]
+	});
+});
+
 

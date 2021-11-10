@@ -43,7 +43,7 @@ function table_calc(frm, cdt, cdn) {
         $.each(frm.doc.excel_project_pre_costing_items || [], function (i, d) {
             t_net_sales += flt(d.sales_amount)- flt(d.vat_ait);
             });
-        frm.set_value("total_net_sales", t_net_sales - frm.doc.total_commission);     
+        frm.set_value("total_net_sales", t_net_sales );     
 
         // var t_commission = 0;
         // $.each(frm.doc.excel_project_pre_costing_items || [], function (i, d) {

@@ -165,4 +165,16 @@ def get_data():
 				},
 			]
 		},
+		{
+			"label": _("Service Center Reports"),
+			"icon": "fa fa-cog",
+			"items": [
+				{
+					"type": "report",
+					"name": "Excel Warranty Claim Analysis",
+					"doctype": "Warranty Claim",
+					"is_query_report": True,
+				},
+			]
+		},		
 	]

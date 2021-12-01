@@ -39,6 +39,14 @@ def get_data():
 					"type": "doctype",
 					"name": "ArcApps Short Term Loan"
 				},
+				{
+					"type": "doctype",
+					"name": "ArcApps Dream Project"
+				},
+				{
+					"type": "doctype",
+					"name": "ArcApps Child Customers"
+				},
 			]
 		},
 		{

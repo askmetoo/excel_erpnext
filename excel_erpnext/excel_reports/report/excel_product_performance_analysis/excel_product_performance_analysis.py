@@ -131,33 +131,33 @@ def get_columns(additional_table_columns, filters):
 		columns.extend(
 			[
 				{
-                                        'label': _('Territory'),
-                                        'fieldname': 'territory',
-                                        'fieldtype': 'Link',
-                                        'options': 'Territory',
-                                        'width': 80
-                                },
+					'label': _('Territory'),
+					'fieldname': 'territory',
+					'fieldtype': 'Link',
+					'options': 'Territory',
+					'width': 80
+				},
 				{
-	                                'label': _('Customer Group'),
-                                	'fieldname': 'customer_group',
-        	                        'fieldtype': 'Link',
-                	                'options': 'Customer Group',
-                        	        'width': 120
-		                },
+				'label': _('Customer Group'),
+				'fieldname': 'customer_group',
+				'fieldtype': 'Link',
+				'options': 'Customer Group',
+				'width': 120
+				},
 				{
-                                        'label': _('Brand'),
-                                        'fieldname': 'brand',
-                                        'fieldtype': 'Link',
-                                        'options': 'Brand',
-                                        'width': 80
-                                },
+					'label': _('Brand'),
+					'fieldname': 'brand',
+					'fieldtype': 'Link',
+					'options': 'Brand',
+					'width': 80
+				},
 				{
-	                                'label': _('Item Group'),
-        	                        'fieldname': 'item_group',
-                	                'fieldtype': 'Link',
-                        	        'options': 'Item Group',
-                                	'width': 120
-                        	},
+				'label': _('Item Group'),
+				'fieldname': 'item_group',
+				'fieldtype': 'Link',
+				'options': 'Item Group',
+				'width': 120
+				},
 				{
 					'label': _('Item Code'),
 					'fieldname': 'item_code',
@@ -335,9 +335,9 @@ def get_items(filters, additional_query_columns):
 			`tabSales Invoice Item`.base_net_amount, `tabSales Invoice`.customer_name,
 			`tabSales Invoice`.customer_group, `tabSales Invoice Item`.so_detail,
 			`tabSales Invoice`.update_stock, `tabSales Invoice Item`.uom, `tabSales Invoice Item`.qty {0}
-		from `tabSales Invoice`, `tabSales Invoice Item`, `tabSales Team`
-		where `tabSales Invoice`.name = `tabSales Invoice Item`.parent
-			and `tabSales Invoice`.docstatus = 1 {1}
+		from `tabSales Invoice Item`, `tabSales Invoice` left join `tabSales Team` on `tabSales Invoice`.name = `tabSales Team`.parent
+		where `tabSales Invoice`.name = `tabSales Invoice Item`.parent and `tabSales Invoice`.docstatus = 1 {1} 
+			
 		""".format(additional_query_columns or '', conditions), filters, as_dict=1) #nosec
 
 def get_delivery_notes_against_sales_order(item_list):

@@ -225,6 +225,11 @@ fixtures = [
                     "Sales Invoice-mrp_sales_grand_total",
                     "Sales Invoice Item-mrp_sales_rate",
                     "Sales Invoice Item-mrp_sales_amount",
+                    "Employee-expense_approver",
+                    "Employee Advance-excel_employee_email",
+                    "Employee Advance-excel_iou_adjustment_date",
+                    "Employee Advance-excel_supervisor",
+                    "Employee Advance-excel_supervisor_name",
                 ],
             ],
         ]

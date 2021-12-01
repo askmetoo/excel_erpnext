@@ -4,6 +4,28 @@ from frappe import _
 def get_data():
 	return [
 		{
+			"label": _("IoU and Claims"),
+			"icon": "fa fa-cog",
+			"items": [
+				{
+					"label": "IoU (Employee Advance)",
+					"type": "doctype",
+					"name": "Employee Advance"
+				},
+				{
+					"label": "Conveyances (Expense Claim)",
+					"type": "doctype",
+					"name": "Expense Claim"
+				},
+				{
+					"type": "report",
+					"name": "Employee Advance Summary",
+					"doctype": "Employee Advance",
+					"is_query_report": True,
+				},
+			]
+		},
+		{
 			"label": _("Accounting Dimensions"),
 			"icon": "fa fa-cog",
 			"items": [
@@ -38,6 +60,14 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Excel Short Term Loan"
+				},
+				{
+					"type": "doctype",
+					"name": "Excel Dream Project"
+				},
+				{
+					"type": "doctype",
+					"name": "Excel Child Customers"
 				},
 			]
 		},
@@ -98,6 +128,7 @@ def get_data():
 					"type": "doctype",
 					"name": "Excel Project Pre Costing"
 				},
+				
 				{
 					"type": "doctype",
 					"name": "Excel Quotation"
@@ -115,6 +146,12 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Excel Project Tracking"
+				},
+				{
+					"type": "report",
+					"name": "Excel Project Wise Ageing",
+					"doctype": "Excel Project Tracking",
+					"is_query_report": True,
 				},
 				{
 					"type": "doctype",

@@ -57,12 +57,12 @@ frappe.query_reports["Excel Account Wise Ledger"] = {
 		{
 			"fieldname": "party_type",
 			"label": __("Party Type"),
-			"fieldtype": "Select",
-			"options": ['Customer', 'Supplier'],
-			"default": "Customer"
-			// on_change: function () {
-			// 	frappe.query_report.set_filter_value('party', "");
-			// }
+			"fieldtype": "Link",
+			"options": "Party Type",
+			"default": "",
+			on_change: function () {
+				frappe.query_report.set_filter_value('party', "");
+			}
 		},
 		{
 			"fieldname": "party",
@@ -156,5 +156,15 @@ frappe.query_reports["Excel Account Wise Ledger"] = {
 	]
 }
 
-erpnext.utils.add_dimensions('General Ledger', 15)
+//erpnext.utils.add_dimensions('General Ledger', 15)
+
+erpnext.dimension_filters.forEach((dimension) => {
+	frappe.query_reports["Excel Account Wise Ledger"].filters.splice(15, 0, {
+		"fieldname": dimension["fieldname"],
+		"label": __(dimension["label"]),
+		"fieldtype": "Link",
+		"options": dimension["document_type"]
+	});
+});
+
 

@@ -24,10 +24,19 @@ def get_data(filters):
 	if filters.get("project_status"):
 		conditions +="AND project_status = '{}' ".format(filters.get("project_status"))	
 
+	# if filters.get("docstatus"):
+	# 	if filters.get("docstatus")=="Draft":
+	# 		conditions +="AND docstatus=0
+	# 			print "\n\n SOmething \n\n"
+			
 	return frappe.db.sql(
 		f"""
 		SELECT
-			name as id, project_name, project_incharge, project_status, start_date, expected_handover_date,
+			name as id, 
+			(case when docstatus=0 then 'Draft'
+             when docstatus=1 then 'Submitted'
+             else 'Cancelled'
+             end) as docstatus, project_name, project_incharge, project_status, start_date, expected_handover_date,
 			customer_name, customer_address, customer_contact_person, si_name, customer_mobile, project_category, 
 			final_invoice_submission_date, final_handover_date, final_invoice_submitted_by, project_incharge_sales, 
 			project_incharge_tech, TIMESTAMPDIFF(DAY, final_invoice_submission_date, "{filters.get("to_date")}") as ageing 
@@ -48,6 +57,12 @@ def get_columns():
 			'fieldname': 'project_name',
 			'fieldtype': 'Data',
 			'width': 120
+		},
+		{
+			'label': _('Doc Status'),
+			'fieldname': 'docstatus',
+			'fieldtype': 'Data',
+			'width': 80
 		},
 		{
 			'label': _('Start Date'),

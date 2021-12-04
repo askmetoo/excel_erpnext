@@ -32,5 +32,12 @@ frappe.query_reports["Excel Project Wise Ageing"] = {
 			"fieldtype": 'Select',
 			"options": ["", "Work in Progress", "Completed", "Pending"]
 		},
+		{
+			"fieldname": 'docstatus',
+			"label": __('Doc Status'),
+			"fieldtype": 'Select',
+			"hidden": 1,
+			"options": ["", "Draft", "Submitted", "Cancelled"]
+		},
 	]
 };

@@ -134,7 +134,7 @@ frappe.query_reports["Excel Customer Ledger"] = {
 }
 
 erpnext.dimension_filters.forEach((dimension) => {
-	frappe.query_reports["General Ledger"].filters.splice(15, 0, {
+	frappe.query_reports["Excel Customer Ledger"].filters.splice(15, 0, {
 		"fieldname": dimension["fieldname"],
 		"label": __(dimension["label"]),
 		"fieldtype": "Link",

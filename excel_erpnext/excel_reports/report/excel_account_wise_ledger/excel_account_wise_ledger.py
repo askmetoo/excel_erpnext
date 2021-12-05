@@ -122,74 +122,78 @@ def get_gl_entries(filters):
 	select_fields = """, debit, credit, debit_in_account_currency,
 		credit_in_account_currency """
 
-	order_by_statement = "order by posting_date, account, creation"
+	order_by_statement = "order by g.posting_date, g.account, g.creation"
 
 	if filters.get("group_by") == _("Group by Voucher"):
-		order_by_statement = "order by posting_date, voucher_type, voucher_no"
+		order_by_statement = "order by g.posting_date, g.voucher_type, g.voucher_no"
 
 	if filters.get("include_default_book_entries"):
 		filters['company_fb'] = frappe.db.get_value("Company",
 			filters.get("company"), 'default_finance_book')
-
-	gl_entries = frappe.db.sql(
-		"""
-		select
-			name as gl_entry, posting_date, account, party_type, party,
-			voucher_type, voucher_no, cost_center, project,
-			against_voucher_type, against_voucher, account_currency,
-			remarks, against, is_opening {select_fields}
-		from `tabGL Entry`
-		where company=%(company)s {conditions}
-		{order_by_statement}
-		""".format(
-			select_fields=select_fields, conditions=get_conditions(filters),
-			order_by_statement=order_by_statement
-		),
-		filters, as_dict=1)
-
 	if filters.get('presentation_currency'):
 		return convert_to_presentation_currency(gl_entries, currency_map)
 	else:
-		return gl_entries
+		return frappe.db.sql(''' 
+		select
+				g.name as gl_entry, g.posting_date, g.account, g.party_type, g.party,g.voucher_type, g.voucher_no,
+				c.customer_name, s.supplier_name, si.territory, p.excel_territory AS payment_territory, j.excel_territory as journal_territory,
+				d.territory as delivery_territory, se.excel_territory as stock_territory,  
+				g.cost_center, g.project, g.against_voucher_type, g.against_voucher, g.account_currency,
+				g.remarks, g.against, g.is_opening {select_fields} 
+			from `tabGL Entry` as g
+			LEFT JOIN `tabCustomer` c ON g.party = c.name 
+			LEFT JOIN `tabSales Invoice` si ON g.voucher_no = si.name 
+			LEFT JOIN `tabSupplier` s ON g.party = s.name
+			LEFT JOIN `tabPayment Entry` p ON g.voucher_no = p.name 
+			LEFT JOIN `tabJournal Entry` j ON g.voucher_no = j.name
+			LEFT JOIN `tabDelivery Note` d ON g.voucher_no = d.name
+			LEFT JOIN `tabStock Entry` se ON g.voucher_no = se.name
+		where g.company=%(company)s {conditions} {order_by_statement}
+
+		'''.format(
+				select_fields=select_fields, conditions=get_conditions(filters),
+				order_by_statement=order_by_statement
+			),
+		filters, as_dict=1)
 
 
 def get_conditions(filters):
 	conditions = []
 	if filters.get("account"):
 		lft, rgt = frappe.db.get_value("Account", filters["account"], ["lft", "rgt"])
-		conditions.append("""account in (select name from tabAccount
-			where lft>=%s and rgt<=%s and docstatus<2)""" % (lft, rgt))
+		conditions.append("""g.account in (select `tabAccount`.name from tabAccount
+			where lft>=%s and rgt<=%s and `tabAccount`.docstatus<2)""" % (lft, rgt))
 
 	if filters.get("cost_center"):
 		filters.cost_center = get_cost_centers_with_children(filters.cost_center)
-		conditions.append("cost_center in %(cost_center)s")
+		conditions.append("g.cost_center in %(cost_center)s")
 
 	if filters.get("voucher_no"):
-		conditions.append("voucher_no=%(voucher_no)s")
+		conditions.append("g.voucher_no=%(voucher_no)s")
 
 	if filters.get("group_by") == "Group by Party" and not filters.get("party_type"):
-		conditions.append("party_type in ('Customer', 'Supplier')")
+		conditions.append("g.party_type in ('Customer', 'Supplier')")
 
 	if filters.get("party_type"):
-		conditions.append("party_type=%(party_type)s")
+		conditions.append("g.party_type=%(party_type)s")
 
 	if filters.get("party"):
-		conditions.append("party in %(party)s")
+		conditions.append("g.party in %(party)s")
 
 	if not (filters.get("account") or filters.get("party") or
 		filters.get("group_by") in ["Group by Account", "Group by Party"]):
-		conditions.append("posting_date >=%(from_date)s")
+		conditions.append("g.posting_date >=%(from_date)s")
 
-	conditions.append("(posting_date <=%(to_date)s or is_opening = 'Yes')")
+	conditions.append("(g.posting_date <=%(to_date)s or g.is_opening = 'Yes')")
 
 	if filters.get("project"):
-		conditions.append("project in %(project)s")
+		conditions.append("g.project in %(project)s")
 
 	if filters.get("finance_book"):
 		if filters.get("include_default_book_entries"):
-			conditions.append("(finance_book in (%(finance_book)s, %(company_fb)s, '') OR finance_book IS NULL)")
+			conditions.append("(g.finance_book in (%(finance_book)s, %(company_fb)s, '') OR g.finance_book IS NULL)")
 		else:
-			conditions.append("finance_book in (%(finance_book)s)")
+			conditions.append("g.finance_book in (%(finance_book)s)")
 
 	from frappe.desk.reportview import build_match_conditions
 	match_conditions = build_match_conditions("GL Entry")
@@ -441,28 +445,38 @@ def get_columns(filters):
 		{
 			"label": _("Customer Name"),
 			"fieldname": "customer_name",
-			"width": 100
+			"width": 150
 		},
 		{
-			"label": _("Party Name"),
-			"fieldname": "party_name",
-			"width": 100
+			"label": _("Supplier Name"),
+			"fieldname": "supplier_name",
+			"width": 150
 		},
 		{
 			"label": _("Territory"),
 			"fieldname": "territory",
 			"width": 100
 		},
+
 		{
-			"label": _("Excel Territory"),
-			"fieldname": "excel_territory",
-			"width": 100
+			"label": _("Payment Territory"),
+			"fieldname": "payment_territory",
+			"width": 150
 		},
 		{
-			"label": _("Project"),
-			"options": "Project",
-			"fieldname": "project",
-			"width": 100
+			"label": _("Journal Territory"),
+			"fieldname": "journal_territory",
+			"width": 150
+		},
+		{
+			"label": _("Delivery Territory"),
+			"fieldname": "delivery_territory",
+			"width": 150
+		},
+		{
+			"label": _("Stock Territory"),
+			"fieldname": "stock_territory",
+			"width": 150
 		},
 		{
 			"label": _("Cost Center"),
@@ -483,15 +497,21 @@ def get_columns(filters):
 			"width": 100
 		},
 		{
+			"label": _("Remarks"),
+			"fieldname": "remarks",
+			"width": 400
+		},
+		{
 			"label": _("Supplier Invoice No"),
 			"fieldname": "bill_no",
 			"fieldtype": "Data",
 			"width": 100
 		},
 		{
-			"label": _("Remarks"),
-			"fieldname": "remarks",
-			"width": 400
+			"label": _("Project"),
+			"options": "Project",
+			"fieldname": "project",
+			"width": 100
 		}
 	])
 

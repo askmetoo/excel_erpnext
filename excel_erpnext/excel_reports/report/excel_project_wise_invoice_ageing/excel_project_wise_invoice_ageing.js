@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 /* eslint-disable */
 
-frappe.query_reports["Excel Project Wise Ageing"] = {
+frappe.query_reports["Excel Project Wise Invoice Ageing"] = {
 	"filters": [
 		{
 			"fieldname": "from_date",

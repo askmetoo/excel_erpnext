@@ -150,6 +150,14 @@ def get_data():
 				{
 					"type": "report",
 					"name": "Excel Project Wise Ageing",
+					"label": "Project Wise Ageing Summary Report",
+					"doctype": "Excel Project Tracking",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Project Wise Invoice Ageing",
+					"label": "Project Wise Invoice Ageing Report",
 					"doctype": "Excel Project Tracking",
 					"is_query_report": True,
 				},

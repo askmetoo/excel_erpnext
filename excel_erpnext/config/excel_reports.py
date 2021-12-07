@@ -87,6 +87,12 @@ def get_data():
 				},
 				{
 					"type": "report",
+					"name": "Excel Customer Credit and Balance Summary",
+					"doctype": "Customer",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
 					"name": "Excel Sales Person Ranking By Collection",
 					"doctype": "Sales Invoice",
 					"is_query_report": True,

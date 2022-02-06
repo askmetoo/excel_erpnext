@@ -51,6 +51,18 @@ def get_data():
 				},
 				{
 					"type": "report",
+					"name": "Excel Sales Register",
+					"doctype": "Sales Invoice",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Accounts Receivable",
+					"doctype": "Sales Invoice",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
 					"name": "Excel Customer Ranking By Collection",
 					"doctype": "Sales Invoice",
 					"is_query_report": True,
@@ -167,6 +179,26 @@ def get_data():
 					"type": "report",
 					"name": "Excel LC Pipeline Summary",
 					"doctype": "Excel LC Pipeline",
+					"is_query_report": True,
+				},
+			]
+		},
+		{
+			"label": _("Project Related Reports"),
+			"icon": "fa fa-cog",
+			"items": [
+				{
+					"type": "report",
+					"name": "Excel Project Wise Ageing",
+					"label": "Project Wise Ageing Summary Report",
+					"doctype": "Excel Project Tracking",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Project Wise Invoice Ageing",
+					"label": "Project Wise Invoice Ageing Report",
+					"doctype": "Excel Project Tracking",
 					"is_query_report": True,
 				},
 			]

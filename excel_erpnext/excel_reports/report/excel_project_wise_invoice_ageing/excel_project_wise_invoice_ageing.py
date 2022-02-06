@@ -39,7 +39,7 @@ def get_data(filters):
 			(case when epr.docstatus=0 then 'Draft'
              when epr.docstatus=1 then 'Submitted'
              else 'Cancelled'
-             end) as docstatus, epr.project_name, epr.project_incharge, epr.project_status, epr.start_date, epr.expected_handover_date,
+             end) as docstatus, epr.project_name, epr.project_status, epr.start_date, epr.expected_handover_date,
 			epr.customer_name, epr.customer_address, epr.customer_contact_person, epr.si_name, epr.customer_mobile, epr.project_category, 
 			epr.final_invoice_submission_date, epr.final_handover_date, epr.final_invoice_submitted_by, epr.project_incharge_sales, 
 			epr.project_incharge_tech, TIMESTAMPDIFF(DAY, epr.final_invoice_submission_date, "{filters.get("to_date")}") as ageing,

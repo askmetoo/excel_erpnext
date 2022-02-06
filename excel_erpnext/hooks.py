@@ -33,7 +33,8 @@ doctype_js = {
     "Excel LC Costing" : "public/js/excel_lc_costing.js", 
     "Excel LC No" : "public/js/excel_lc_no.js",
     "Excel MPS Counter" : "public/js/excel_mps_counter.js",
-    "Excel LC Pipeline" : "public/js/excel_lc_pipeline.js" 
+    "Excel LC Pipeline" : "public/js/excel_lc_pipeline.js",
+    "Item Price" : "public/js/item_price.js" 
     }
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -225,14 +226,15 @@ fixtures = [
                     "Sales Invoice-mrp_sales_grand_total",
                     "Sales Invoice Item-mrp_sales_rate",
                     "Sales Invoice Item-mrp_sales_amount",
-                    "Sales Invoice Item-excel_credit_limit",
-                    "Sales Invoice Item-excel_outstanding_balance",
-                    "Sales Invoice Item-excel_remaining_credit",                                                            
+                    "Sales Invoice-excel_credit_limit",
+                    "Sales Invoice-excel_outstanding_balance",
+                    "Sales Invoice-excel_remaining_credit",
                     "Employee-expense_approver",
                     "Employee Advance-excel_employee_email",
                     "Employee Advance-excel_iou_adjustment_date",
                     "Employee Advance-excel_supervisor",
                     "Employee Advance-excel_supervisor_name",
+                    "Customer Credit Limit-excel_fixed_credit_limit",
                 ],
             ],
         ]

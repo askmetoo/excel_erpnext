@@ -43,7 +43,7 @@ def get_data(filters):
 			customer_name, customer_address, customer_contact_person, si_name, customer_mobile, project_category, 
 			final_invoice_submission_date, final_handover_date, final_invoice_submitted_by, project_incharge_sales, 
 			project_incharge_tech, TIMESTAMPDIFF(DAY, final_invoice_submission_date, "{filters.get("to_date")}") as ageing 
-		FROM  `tabExcel Project Tracking` WHERE {conditions}
+		FROM  `tabExcel Project Tracking Summary` WHERE {conditions}
 		""",as_dict=1)
 
 def get_columns():
@@ -52,7 +52,7 @@ def get_columns():
 			'label': _('ID'),
 			'fieldname': 'id',
 			'fieldtype': 'Link',
-			'options':'Excel Project Tracking',
+			'options':'Excel Project Tracking Summary',
 			'width': 120
 		},
 		{

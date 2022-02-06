@@ -5,7 +5,7 @@
 frappe.query_reports["Excel Warranty Claim Analysis"] = {
 	"filters": [
 		{
-			fieldname:"from_date",
+			fieldname: "from_date",
 			label: __("From Date"),
 			fieldtype: "Date",
 			default: frappe.datetime.add_months(frappe.datetime.get_today(), -1),
@@ -13,7 +13,7 @@ frappe.query_reports["Excel Warranty Claim Analysis"] = {
 			width: "60px"
 		},
 		{
-			fieldname:"to_date",
+			fieldname: "to_date",
 			label: __("To Date"),
 			fieldtype: "Date",
 			default: frappe.datetime.get_today(),
@@ -21,69 +21,74 @@ frappe.query_reports["Excel Warranty Claim Analysis"] = {
 			width: "60px"
 		},
 		{
-			fieldname:"territory",
+			fieldname: "territory",
 			label: __("Territory"),
 			fieldtype: "Link",
 			width: "80",
 			options: "Territory",
 		},
 		{
-			fieldname:"claim_item",
+			fieldname: "claim_item",
 			label: __("Claim Item"),
-			fieldtype: "Data"
+			fieldtype: "link",
+			options: "Item",
 		},
 		{
-			fieldname:"claim_type",
+			fieldname: "claim_type",
 			label: __("Claim Type"),
-			fieldtype: "Link",
+			fieldtype: "Select",
 			width: "80",
-			options: "Expense Claim Type",
+			options: "\nWarranty\nNon Warranty\nThird Party Warranty\nNon Serial Warranty",
 		},
 		{
-			fieldname:"brand",
+			fieldname: "brand",
 			label: __("Brand"),
 			fieldtype: "Link",
 			width: "80",
 			options: "Brand",
 		},
 		{
-			fieldname:"claim_status",
+			fieldname: "claim_status",
 			label: __("Claim Status"),
-			fieldtype: "Data"
+			fieldtype: "Select",
+			options: "\nIn Progress\nTo Deliver\nDelivered\nRejected\nAll",
 		},
 		{
-			fieldname:"replaced_item",
+			fieldname: "replaced_item",
 			label: __("Replaced Item"),
-			fieldtype: "Data"
+			fieldtype: "link",
+			options: "Item",
 		},
 		{
-			fieldname:"delivery_status",
+			fieldname: "delivery_status",
 			label: __("Delivery Status"),
-			fieldtype: "Data"
+			fieldtype: "Select",
+			options: "\nRepaired\nReplaced\nUpgraded\nRejected",
 		},
 		{
-			fieldname:"customer",
+			fieldname: "customer",
 			label: __("Customer"),
 			fieldtype: "Link",
 			width: "80",
 			options: "Customer",
 		},
 		{
-			fieldname:"third_party_name",
+			fieldname: "third_party_name",
 			label: __("Third Party Name"),
 			fieldtype: "Data"
 		},
 		{
-			fieldname:"thrid_party_mobile",
+			fieldname: "thrid_party_mobile",
 			label: __("Thrid Party Mobile"),
 			fieldtype: "Data"
 		},
 		{
-			fieldname:"price_list",
+			fieldname: "price_list",
 			label: __("Price List"),
 			fieldtype: "Link",
 			width: "80",
 			options: "Price List",
+			default: "Standard Selling",
 			reqd: 1
 		},
 	]

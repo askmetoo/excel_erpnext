@@ -1,0 +1,350 @@
+{
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "PRTS-.#####",
+ "creation": "2021-12-26 12:00:22.521907",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "po_no",
+  "section_break_2",
+  "project_name",
+  "project_category",
+  "project_status",
+  "final_invoice_submission_date",
+  "column_break_4",
+  "start_date",
+  "expected_handover_date",
+  "final_handover_date",
+  "final_invoice_submitted_by",
+  "si_details_section",
+  "customer_name",
+  "customer_address",
+  "customer_contact_person",
+  "customer_mobile",
+  "customer_email",
+  "customer_details_section",
+  "si_name",
+  "si_address",
+  "si_contact_person",
+  "si_mobile",
+  "si_email",
+  "section_break_20",
+  "invoice_table",
+  "total_invoice_amount",
+  "section_break_24",
+  "get_items",
+  "project_tracking_items",
+  "section_break_26",
+  "project_incharge_sales",
+  "column_break_28",
+  "project_incharge_tech",
+  "section_break_30",
+  "excel_project_tracking_engineers",
+  "section_break_38",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name"
+  },
+  {
+   "fieldname": "project_category",
+   "fieldtype": "Select",
+   "label": "Project Category",
+   "options": "Networks and Surveillance\nPrinting\nUnified Communications\nMisc."
+  },
+  {
+   "fieldname": "project_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Status",
+   "options": "Pending\nWork in Progress\nCompleted"
+  },
+  {
+   "fieldname": "final_invoice_submission_date",
+   "fieldtype": "Date",
+   "label": "Final Invoice Submission Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "expected_handover_date",
+   "fieldtype": "Date",
+   "label": "Expected Handover Date"
+  },
+  {
+   "fieldname": "final_handover_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Final Handover Date"
+  },
+  {
+   "fieldname": "final_invoice_submitted_by",
+   "fieldtype": "Data",
+   "label": "Final Invoice Submitted By"
+  },
+  {
+   "fieldname": "si_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer and SI Details"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Data",
+   "label": "Customer Address"
+  },
+  {
+   "fieldname": "customer_contact_person",
+   "fieldtype": "Data",
+   "label": "Customer Contact Person"
+  },
+  {
+   "fieldname": "customer_mobile",
+   "fieldtype": "Data",
+   "label": "Customer Mobile"
+  },
+  {
+   "fieldname": "customer_email",
+   "fieldtype": "Data",
+   "label": "Customer Email"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "si_name",
+   "fieldtype": "Data",
+   "label": "SI Name"
+  },
+  {
+   "fieldname": "si_address",
+   "fieldtype": "Data",
+   "label": "SI Address"
+  },
+  {
+   "fieldname": "si_contact_person",
+   "fieldtype": "Data",
+   "label": "SI Contact Person"
+  },
+  {
+   "fieldname": "si_mobile",
+   "fieldtype": "Data",
+   "label": "SI Mobile"
+  },
+  {
+   "fieldname": "si_email",
+   "fieldtype": "Data",
+   "label": "SI  Email"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice_table",
+   "fieldtype": "Table",
+   "label": "Invoice Table",
+   "options": "Excel Project Tracking Invoice Table"
+  },
+  {
+   "fieldname": "total_invoice_amount",
+   "fieldtype": "Float",
+   "label": "Total Invoice Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "get_items",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Get Items"
+  },
+  {
+   "fieldname": "project_tracking_items",
+   "fieldtype": "Table",
+   "label": "Project Tracking Items",
+   "options": "Excel Project Tracking Items Table"
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project_incharge_sales",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Incharge (Sales)"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_incharge_tech",
+   "fieldtype": "Data",
+   "label": "Project Incharge (Tech)"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "excel_project_tracking_engineers",
+   "fieldtype": "Table",
+   "label": "Excel Project Tracking Engineers",
+   "options": "Excel Project Tracking Engineers"
+  },
+  {
+   "fieldname": "section_break_38",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Excel Project Tracking Summary",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Excel Project Tracking Summary",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "po_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "PO No"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-12-26 12:30:39.808401",
+ "modified_by": "Administrator",
+ "module": "Excel ERPNext",
+ "name": "Excel Project Tracking Summary",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Knowledge Base Editor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Excel Project User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "project_name",
+ "track_changes": 1
+}

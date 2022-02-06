@@ -145,6 +145,24 @@ def get_data():
 			"items": [
 				{
 					"type": "doctype",
+					"name": "Excel Project Tracking Summary"
+				},
+				{
+					"type": "report",
+					"name": "Excel Project Tracking Summary Ageing",
+					"label": "Excel Project Tracking Summary Ageing",
+					"doctype": "Excel Project Tracking Summary",
+					"is_query_report": True,
+				},
+				{
+					"type": "report",
+					"name": "Excel Project Tracking Summary Invoice Ageing",
+					"label": "Excel Project Tracking Summary Invoice Ageing",
+					"doctype": "Excel Project Tracking Summary",
+					"is_query_report": True,
+				},
+				{
+					"type": "doctype",
 					"name": "Excel Project Tracking"
 				},
 				{
